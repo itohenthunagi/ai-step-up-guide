@@ -1,0 +1,104 @@
+/*
+  Main Stylesheet
+  生成AIステップアップガイド - メインスタイルシート
+  
+  このファイルは必要なCSSファイルをすべて読み込みます
+*/
+
+/* ===== CSS読み込み順序 ===== */
+/* 1. 変数定義 */
+@import url('./css/variables.css');
+
+/* 2. リセットCSS */
+@import url('./css/reset.css');
+
+/* 3. ベーススタイル */
+@import url('./css/base.css');
+
+/* 4. コンポーネント */
+@import url('./css/components.css');
+
+/* 5. ページ固有スタイル */
+@import url('./css/pages.css');
+
+/* ===== Google Fonts読み込み ===== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap');
+
+/* ===== グローバル設定の補完 ===== */
+
+/* 
+  スムーズスクロールのブラウザサポート強化
+  既にbase.cssで設定済みですが、確実性のため再定義
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* 
+  フォントレンダリングの最適化
+  特に日本語フォントの美しい表示のため
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 
+  印刷用スタイルの基本設定
+*/
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .header,
+  .footer,
+  .nav,
+  .btn {
+    display: none !important;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 80%;
+  }
+  
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+  
+  img {
+    max-width: 100% !important;
+  }
+  
+  .page-title {
+    font-size: 18pt;
+    margin-bottom: 20pt;
+  }
+}
+
+/* 
+  高コントラストモード対応
+  アクセシビリティ向上のため
+*/
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-primary: #000000;
+    --color-text-secondary: #333333;
+    --color-background: #ffffff;
+    --color-border: #000000;
+  }
+} 

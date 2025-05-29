@@ -1,0 +1,317 @@
+/**
+ * CSS Reset - 生成AIステップアップガイド
+ * モダンなCSSリセット + アクセシビリティ対応
+ */
+
+/* ===== ボックスサイジングの統一 ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===== マージン・パディングリセット ===== */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HTML・BODYの基本設定 ===== */
+html {
+  height: 100%;
+  /* スムーズスクロール */
+  scroll-behavior: smooth;
+  /* フォントサイズの基準設定 */
+  font-size: 16px;
+  /* 1rem = 16px */
+  line-height: 1.15;
+  /* Safariでの最小フォントサイズ問題対応 */
+  -webkit-text-size-adjust: 100%;
+  /* IE での MS clear type 有効化 */
+  -ms-text-size-adjust: 100%;
+  /* タップ操作時のハイライト色削除（モバイル） */
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  height: 100%;
+  /* フォントの基本設定 */
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+  
+  /* フォントレンダリング最適化 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+  /* 水平スクロール防止 */
+  overflow-x: hidden;
+}
+
+/* ===== 見出し要素のリセット ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+/* ===== リスト要素のリセット ===== */
+ol, ul {
+  list-style: none;
+}
+
+/* ===== リンク要素のリセット ===== */
+a {
+  color: inherit;
+  text-decoration: inherit;
+  /* アウトライン表示の改良 */
+  outline-offset: 2px;
+}
+
+/* フォーカス時のアウトライン */
+a:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* ===== フォーム要素のリセット ===== */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+/* ボタンのリセット */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ボタンのフォーカス状態 */
+button:focus-visible,
+[type='button']:focus-visible,
+[type='reset']:focus-visible,
+[type='submit']:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* 無効化されたボタン */
+button:disabled,
+[type='button']:disabled,
+[type='reset']:disabled,
+[type='submit']:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 入力要素 */
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* ===== テーブル要素のリセット ===== */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+  border-color: inherit;
+}
+
+td, th {
+  vertical-align: baseline;
+}
+
+/* ===== メディア要素のリセット ===== */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 画像のドラッグ防止 */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+/* SVGのサイズ調整 */
+svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* ===== HTML5要素の表示設定 ===== */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+/* ===== フォーカス要素の改良 ===== */
+/* キーボードナビゲーション時のフォーカス表示 */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* マウスクリック時のフォーカス表示を無効化 */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ===== 選択テキストのスタイル ===== */
+::selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-primary-200);
+  color: var(--color-text-primary);
+}
+
+/* ===== スクロールバーのスタイル（Webkit） ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-300);
+  border-radius: var(--border-radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gray-400);
+}
+
+/* ===== hidden属性の対応 ===== */
+[hidden] {
+  display: none !important;
+}
+
+/* ===== レスポンシブ画像・動画 ===== */
+img,
+picture,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== プリント用スタイル ===== */
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  
+  img {
+    page-break-inside: avoid;
+  }
+  
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/* ===== アクセシビリティ対応 ===== */
+
+/* モーション軽減設定に対応 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+  :root {
+    --color-border-default: #000000;
+    --color-text-primary: #000000;
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    border: 2px solid currentColor;
+  }
+}
+
+/* 透明度軽減設定に対応 */
+@media (prefers-reduced-transparency: reduce) {
+  * {
+    backdrop-filter: none !important;
+  }
+} 
