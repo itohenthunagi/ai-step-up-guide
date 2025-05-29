@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO基本設定 -->
+    <title>{{page_title}} | 生成AIステップアップガイド</title>
+    <meta name="description" content="{{page_description}}">
+    <meta name="keywords" content="生成AI,人工知能,プロンプト,初心者,学習,ガイド">
+    <meta name="author" content="生成AIステップアップガイド">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP設定（Facebook・Twitter共通） -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{page_title}} | 生成AIステップアップガイド">
+    <meta property="og:description" content="{{page_description}}">
+    <meta property="og:url" content="{{page_url}}">
+    <meta property="og:site_name" content="生成AIステップアップガイド">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="{{og_image_url}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{page_title}} - 生成AIステップアップガイド">
+    
+    <!-- Twitter Card設定 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{page_title}} | 生成AIステップアップガイド">
+    <meta name="twitter:description" content="{{page_description}}">
+    <meta name="twitter:image" content="{{og_image_url}}">
+    <meta name="twitter:image:alt" content="{{page_title}} - 生成AIステップアップガイド">
+    
+    <!-- 検索エンジン向け追加設定 -->
+    <meta name="theme-color" content="#FF6B35">
+    <meta name="msapplication-TileColor" content="#FF6B35">
+    <meta name="msapplication-config" content="/assets/icons/browserconfig.xml">
+    
+    <!-- DNS Prefetch（パフォーマンス最適化） -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
+    <!-- ファビコン・アイコン -->
+    <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/icons/site.webmanifest">
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preload" href="/style.css" as="style">
+    
+    <!-- フォント最適化読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 構造化データ（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "生成AIステップアップガイド",
+        "description": "生成AIの基本的な使い方を理解し、日常生活や業務で活用できるようになるためのガイドサイト",
+        "url": "{{site_url}}",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "{{site_url}}/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "生成AIステップアップガイド"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "生成AIステップアップガイド"
+        }
+    }
+    </script>
+</head>
+<body class="page-{{page_id}}">
+    <!-- スキップリンク（アクセシビリティ対応） -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    
+    <!-- ページローディング表示（JavaScript必要時） -->
+    <div id="loading-screen" class="loading-screen" aria-hidden="true">
+        <div class="loading-spinner">
+            <span class="sr-only">ページを読み込み中...</span>
+        </div>
+    </div>
+    
+    <!-- ヘッダー -->
+    <header id="site-header" class="site-header" role="banner">
+        {{header_content}}
+    </header>
+    
+    <!-- メインナビゲーション -->
+    <nav id="main-navigation" class="main-navigation" role="navigation" aria-label="メインナビゲーション">
+        {{navigation_content}}
+    </nav>
+    
+    <!-- パンくずリスト -->
+    <nav id="breadcrumb" class="breadcrumb" role="navigation" aria-label="パンくずリスト">
+        {{breadcrumb_content}}
+    </nav>
+    
+    <!-- メインコンテンツ -->
+    <main id="main-content" class="main-content" role="main">
+        <!-- ページヘッダー -->
+        <header class="page-header">
+            <h1 class="page-title">{{page_title}}</h1>
+            <p class="page-description">{{page_description}}</p>
+        </header>
+        
+        <!-- ページコンテンツエリア -->
+        <div class="page-content">
+            {{main_content}}
+        </div>
+    </main>
+    
+    <!-- フッター -->
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+        {{footer_content}}
+    </footer>
+    
+    <!-- アクセシビリティ向上のため、ページトップへ戻るボタン -->
+    <a href="#site-header" class="back-to-top" aria-label="ページトップへ戻る">
+        <span class="back-to-top-icon" aria-hidden="true">↑</span>
+        <span class="sr-only">ページトップへ戻る</span>
+    </a>
+    
+    <!-- JavaScript読み込み（必要時） -->
+    <script src="/src/js/app.js" defer></script>
+    
+    <!-- アナリティクス（本番環境時） -->
+    <!-- Google Analytics等のタグをここに配置 -->
+</body>
+</html> 

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>プロンプト作成 | 生成AIステップアップガイド</title>
+    <meta name="description" content="実践的なプロンプト作成ツール。様々なテンプレートを活用して、効果的なプロンプトを作成・練習できます。">
+    <meta name="keywords" content="プロンプト作成,テンプレート,実践,練習,生成AI,ツール">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-prompt-creator">
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    
+    <header id="site-header" class="site-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/index.html" class="site-title-link">生成AIステップアップガイド</a>
+                </h1>
+            </div>
+        </div>
+    </header>
+    
+    <nav id="main-navigation" class="main-navigation" role="navigation" aria-label="メインナビゲーション">
+        <div class="container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">ホーム</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/ai-basics.html" class="nav-link">基礎理解</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/improve-resolution.html" class="nav-link">解像度向上</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/prompt-engineering.html" class="nav-link">プロンプトエンジニアリング</a>
+                </li>
+                <li class="nav-item nav-item-current">
+                    <a href="/src/pages/prompt-creator.html" class="nav-link" aria-current="page">プロンプト作成</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main id="main-content" class="main-content" role="main">
+        <div class="container">
+            <header class="page-header">
+                <h1 class="page-title">プロンプト作成</h1>
+                <p class="page-description">
+                    学んだ技術を活用して、実際にプロンプトを作成・練習しましょう。<br>
+                    様々なテンプレートを使って、実践的なスキルを身につけます。
+                </p>
+            </header>
+            
+            <div class="page-content">
+                
+                <section class="content-section" id="template-selector">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">📝</span>
+                        プロンプトテンプレート選択
+                    </h2>
+                    
+                    <div class="template-categories">
+                        <div class="template-category" data-category="writing">
+                            <div class="category-header">
+                                <span class="category-icon">✍️</span>
+                                <h3 class="category-title">文章作成</h3>
+                            </div>
+                            <div class="category-description">
+                                <p>ブログ記事、レポート、メールなどの文章作成用テンプレート</p>
+                            </div>
+                        </div>
+                        
+                        <div class="template-category" data-category="business">
+                            <div class="category-header">
+                                <span class="category-icon">💼</span>
+                                <h3 class="category-title">ビジネス</h3>
+                            </div>
+                            <div class="category-description">
+                                <p>企画書、提案書、分析レポートなどビジネス用テンプレート</p>
+                            </div>
+                        </div>
+                        
+                        <div class="template-category" data-category="creative">
+                            <div class="category-header">
+                                <span class="category-icon">🎨</span>
+                                <h3 class="category-title">クリエイティブ</h3>
+                            </div>
+                            <div class="category-description">
+                                <p>アイデア発想、ネーミング、ストーリー作成などのテンプレート</p>
+                            </div>
+                        </div>
+                        
+                        <div class="template-category" data-category="learning">
+                            <div class="category-header">
+                                <span class="category-icon">📚</span>
+                                <h3 class="category-title">学習・教育</h3>
+                            </div>
+                            <div class="category-description">
+                                <p>解説文作成、問題作成、学習計画などのテンプレート</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section" id="template-showcase">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">🛠️</span>
+                        テンプレートギャラリー
+                    </h2>
+                    
+                    <div class="templates-showcase">
+                        <div class="template-showcase-item" data-category="writing">
+                            <h3 class="template-name">ブログ記事作成</h3>
+                            <div class="template-preview">
+                                <pre>あなたは[専門分野]の経験豊富なライターです。
+[ターゲット読者]向けに「[記事タイトル]」について、
+SEOを意識した[文字数]文字の記事を作成してください。
+
+【記事の目的】
+[記事を書く目的・読者に伝えたいこと]
+
+【構成指示】
+・導入（問題提起・読者の関心を引く）
+・本文（3-5つのポイントに分けて詳細解説）
+・まとめ（行動を促す呼びかけ）
+
+【条件】
+・見出し（H2、H3）を効果的に使用
+・具体例や体験談を含める
+・専門用語は分かりやすく説明
+・読みやすい文章構成にする</pre>
+                            </div>
+                            <button class="template-use-btn">このテンプレートを使用</button>
+                        </div>
+                        
+                        <div class="template-showcase-item" data-category="business">
+                            <h3 class="template-name">問題解決提案</h3>
+                            <div class="template-preview">
+                                <pre>あなたは[業界/分野]の問題解決のスペシャリストです。
+以下の課題について、実践的な解決策を提案してください。
+
+【課題】
+[具体的な問題・課題の内容]
+
+【現状分析】
+[現在の状況、制約条件、利用可能なリソース]
+
+【求める提案内容】
+1. 問題の根本原因分析
+2. 解決策の選択肢（3-5案）
+3. 各案のメリット・デメリット比較
+4. 推奨案の詳細実行プラン
+5. 成功指標と評価方法
+
+【制約条件】
+・予算：[予算範囲]
+・期間：[実施期間]
+・人員：[利用可能な人員]</pre>
+                            </div>
+                            <button class="template-use-btn">このテンプレートを使用</button>
+                        </div>
+                        
+                        <div class="template-showcase-item" data-category="creative">
+                            <h3 class="template-name">アイデア発想</h3>
+                            <div class="template-preview">
+                                <pre>あなたは創造的思考の専門家です。
+[目的・テーマ]について、革新的なアイデアを
+[数量]個発想してください。
+
+【背景・文脈】
+[アイデアが必要な背景や状況]
+
+【ターゲット】
+[アイデアの対象となる人・市場]
+
+【制約条件】
+・実現可能性：[現実的 / 創造的 / 自由発想]
+・予算規模：[低予算 / 中予算 / 予算制限なし]
+・時間軸：[短期 / 中期 / 長期]
+
+【アイデアの評価軸】
+各アイデアについて以下で評価してください：
+・独創性（1-5点）
+・実現可能性（1-5点）
+・インパクト（1-5点）
+・コストパフォーマンス（1-5点）</pre>
+                            </div>
+                            <button class="template-use-btn">このテンプレートを使用</button>
+                        </div>
+                        
+                        <div class="template-showcase-item" data-category="learning">
+                            <h3 class="template-name">学習コンテンツ作成</h3>
+                            <div class="template-preview">
+                                <pre>あなたは[専門分野]の教育のプロフェッショナルです。
+[学習者レベル]の学習者向けに、「[学習テーマ]」について
+分かりやすい学習コンテンツを作成してください。
+
+【学習目標】
+この学習を通して、学習者が[具体的にできるようになること]
+
+【学習者の特徴】
+・前提知識：[既に知っていること]
+・学習動機：[なぜ学びたいのか]
+・利用シーン：[どこで使うのか]
+
+【コンテンツ構成】
+1. 導入（なぜ重要なのか、学習のメリット）
+2. 基本概念の説明（専門用語の定義）
+3. 具体例・実例の紹介
+4. 実践的な手順・方法
+5. よくある間違いと対処法
+6. 練習問題・確認テスト
+7. 次のステップの案内
+
+【条件】
+・[文字数/時間]以内で完結
+・図解や例が豊富
+・段階的に理解を深める構成</pre>
+                            </div>
+                            <button class="template-use-btn">このテンプレートを使用</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section" id="prompt-builder">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">🔧</span>
+                        プロンプト作成エリア
+                    </h2>
+                    
+                    <div class="prompt-builder-container">
+                        <div class="builder-input">
+                            <h3>作成したプロンプト</h3>
+                            <textarea id="prompt-textarea" class="prompt-input" 
+                                      placeholder="ここにプロンプトを入力または編集してください...
+                                      
+テンプレートを選択するか、独自のプロンプトを作成できます。
+効果的なプロンプトの要素を忘れずに含めましょう：
+• 役割設定
+• 背景・文脈
+• 具体的なタスク
+• 制約・条件
+• 出力形式"></textarea>
+                            
+                            <div class="builder-actions">
+                                <button id="clear-prompt" class="btn btn-outline">クリア</button>
+                                <button id="copy-prompt" class="btn btn-primary">コピー</button>
+                                <button id="analyze-prompt" class="btn btn-secondary">分析</button>
+                            </div>
+                        </div>
+                        
+                        <div class="builder-analysis" id="prompt-analysis">
+                            <h3>プロンプト分析結果</h3>
+                            <div class="analysis-content">
+                                <p>作成したプロンプトを分析ボタンで確認できます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section" id="examples-gallery">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">💡</span>
+                        成功例ギャラリー
+                    </h2>
+                    
+                    <div class="examples-grid">
+                        <div class="example-card">
+                            <h3 class="example-title">効果的なメール作成</h3>
+                            <div class="example-scenario">
+                                <h4>シチュエーション</h4>
+                                <p>重要なクライアントへのプロジェクト遅延のお詫びメール</p>
+                            </div>
+                            <div class="example-prompt">
+                                <h4>プロンプト例</h4>
+                                <pre>あなたは経験豊富なプロジェクトマネージャーです。
+5年来の重要なクライアント（ABC社田中部長）に対して、
+Webサイトリニューアルプロジェクトの納期が2週間遅れることを
+誠実にお詫びし、信頼回復につながるメールを作成してください。
+
+【状況詳細】
+・遅延理由：追加要件により開発工数が増加
+・元の納期：3月31日 → 新納期：4月14日
+・今後の対応：毎週進捗報告、専任チーム追加
+
+【メール要件】
+・件名も含めて作成
+・謝罪→理由説明→対応策→今後の関係継続意思の流れ
+・ビジネスマナーに則った丁寧な文面
+・400文字程度で簡潔に</pre>
+                            </div>
+                            <div class="example-result">
+                                <h4>期待できる結果</h4>
+                                <ul>
+                                    <li>適切な謝罪表現と責任の明確化</li>
+                                    <li>具体的な対応策の提示</li>
+                                    <li>信頼回復に向けた前向きな姿勢</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="example-card">
+                            <h3 class="example-title">企画書作成支援</h3>
+                            <div class="example-scenario">
+                                <h4>シチュエーション</h4>
+                                <p>社内向け新サービス提案の企画書作成</p>
+                            </div>
+                            <div class="example-prompt">
+                                <h4>プロンプト例</h4>
+                                <pre>あなたは戦略コンサルタントです。
+IT企業の新規事業として「中小企業向けDX支援サービス」の
+企画書を作成してください。
+
+【会社情報】
+・従業員200名のシステム開発会社
+・既存事業：大企業向けシステム開発
+・新規事業予算：年間3000万円
+
+【サービス概要】
+・ターゲット：従業員20-100名の製造業
+・内容：業務デジタル化コンサル+システム導入
+・価格帯：月額20-50万円
+
+【企画書構成】
+1. 事業機会（市場分析、競合状況）
+2. サービス詳細（内容、差別化ポイント）
+3. 事業計画（売上予測、必要リソース）
+4. リスクと対策
+5. 実行スケジュール
+
+各セクション300-500文字で、データや根拠も含めて作成してください。</pre>
+                            </div>
+                            <div class="example-result">
+                                <h4>期待できる結果</h4>
+                                <ul>
+                                    <li>論理的で説得力のある企画書構成</li>
+                                    <li>市場データに基づいた客観的分析</li>
+                                    <li>実現可能性の高い事業計画</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section" id="practice-tips">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">🎯</span>
+                        実践のコツ
+                    </h2>
+                    
+                    <div class="tips-grid">
+                        <div class="tip-card">
+                            <h3 class="tip-title">
+                                <span class="tip-icon">🔄</span>
+                                反復練習
+                            </h3>
+                            <div class="tip-content">
+                                <p>同じテーマで複数回プロンプトを作成し、結果を比較して改善点を見つけましょう。</p>
+                                <ul>
+                                    <li>最初は基本テンプレートを使用</li>
+                                    <li>徐々に独自の要素を追加</li>
+                                    <li>結果の質を比較・評価</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h3 class="tip-title">
+                                <span class="tip-icon">📊</span>
+                                結果の記録
+                            </h3>
+                            <div class="tip-content">
+                                <p>プロンプトと結果をペアで記録し、効果的なパターンを蓄積しましょう。</p>
+                                <ul>
+                                    <li>成功したプロンプトの保存</li>
+                                    <li>改善前後の比較記録</li>
+                                    <li>用途別のテンプレート整理</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-card">
+                            <h3 class="tip-title">
+                                <span class="tip-icon">🤝</span>
+                                他者との共有
+                            </h3>
+                            <div class="tip-content">
+                                <p>作成したプロンプトを同僚や友人と共有し、フィードバックを得ましょう。</p>
+                                <ul>
+                                    <li>プロンプトの分かりやすさ確認</li>
+                                    <li>他の人の視点やアイデア取得</li>
+                                    <li>改善提案の収集</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="content-section" id="next-steps">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">🚀</span>
+                        学習の振り返り
+                    </h2>
+                    
+                    <div class="learning-summary">
+                        <h3>これまでの学習内容</h3>
+                        <div class="summary-steps">
+                            <div class="summary-step">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <h4>基礎理解</h4>
+                                    <p>生成AIの基本概念と活用方法を学習</p>
+                                </div>
+                            </div>
+                            <div class="summary-step">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <h4>解像度向上</h4>
+                                    <p>より質の高いアウトプットを得る考え方を習得</p>
+                                </div>
+                            </div>
+                            <div class="summary-step">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <h4>プロンプトエンジニアリング</h4>
+                                    <p>効果的なプロンプト作成技術を学習</p>
+                                </div>
+                            </div>
+                            <div class="summary-step">
+                                <span class="step-number">4</span>
+                                <div class="step-content">
+                                    <h4>実践練習</h4>
+                                    <p>テンプレートを活用した実際のプロンプト作成</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="next-actions">
+                        <h3>今後のアクション</h3>
+                        <div class="action-cards">
+                            <div class="action-card">
+                                <h4>継続的な実践</h4>
+                                <p>日常業務でAIを活用し、スキルを定着させましょう</p>
+                            </div>
+                            <div class="action-card">
+                                <h4>新しい技術の学習</h4>
+                                <p>AIの進歩に合わせて、新しい活用方法を学び続けましょう</p>
+                            </div>
+                            <div class="action-card">
+                                <h4>コミュニティ参加</h4>
+                                <p>AI活用のコミュニティに参加し、知識を共有しましょう</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="home-link">
+                        <a href="/index.html" class="btn btn-primary">
+                            <span class="btn-icon" aria-hidden="true">🏠</span>
+                            ホームに戻る
+                        </a>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </main>
+    
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">生成AIステップアップガイド</h3>
+                    <p class="footer-description">
+                        生成AIを日常生活や業務で活用できるようになるための学習サイトです。
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">学習コンテンツ</h4>
+                    <ul class="footer-links">
+                        <li><a href="/src/pages/ai-basics.html" class="footer-link">基礎理解</a></li>
+                        <li><a href="/src/pages/improve-resolution.html" class="footer-link">解像度向上</a></li>
+                        <li><a href="/src/pages/prompt-engineering.html" class="footer-link">プロンプトエンジニアリング</a></li>
+                        <li><a href="/src/pages/prompt-creator.html" class="footer-link">プロンプト作成</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 生成AIステップアップガイド. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // テンプレート選択機能
+        document.addEventListener('DOMContentLoaded', function() {
+            const categories = document.querySelectorAll('.template-category');
+            const showcaseItems = document.querySelectorAll('.template-showcase-item');
+            const promptTextarea = document.getElementById('prompt-textarea');
+            
+            // カテゴリ選択
+            categories.forEach(category => {
+                category.addEventListener('click', function() {
+                    const selectedCategory = this.dataset.category;
+                    
+                    // カテゴリのアクティブ状態を更新
+                    categories.forEach(cat => cat.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 対応するテンプレートを表示
+                    showcaseItems.forEach(item => {
+                        if (item.dataset.category === selectedCategory) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // テンプレート使用ボタン
+            document.querySelectorAll('.template-use-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const template = this.previousElementSibling.textContent;
+                    promptTextarea.value = template;
+                    promptTextarea.focus();
+                    
+                    // 使用フィードバック
+                    this.textContent = '追加しました！';
+                    setTimeout(() => {
+                        this.textContent = 'このテンプレートを使用';
+                    }, 2000);
+                });
+            });
+            
+            // プロンプト操作ボタン
+            document.getElementById('clear-prompt').addEventListener('click', function() {
+                promptTextarea.value = '';
+                document.getElementById('prompt-analysis').innerHTML = '<h3>プロンプト分析結果</h3><div class="analysis-content"><p>作成したプロンプトを分析ボタンで確認できます。</p></div>';
+            });
+            
+            document.getElementById('copy-prompt').addEventListener('click', function() {
+                promptTextarea.select();
+                document.execCommand('copy');
+                
+                const originalText = this.textContent;
+                this.textContent = 'コピーしました！';
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 2000);
+            });
+            
+            document.getElementById('analyze-prompt').addEventListener('click', function() {
+                const prompt = promptTextarea.value;
+                const analysisDiv = document.getElementById('prompt-analysis');
+                
+                if (!prompt.trim()) {
+                    analysisDiv.innerHTML = '<h3>プロンプト分析結果</h3><div class="analysis-content"><p class="warning">プロンプトを入力してから分析してください。</p></div>';
+                    return;
+                }
+                
+                // 簡単な分析（実際のAI分析のシミュレーション）
+                const analysis = analyzePrompt(prompt);
+                analysisDiv.innerHTML = `
+                    <h3>プロンプト分析結果</h3>
+                    <div class="analysis-content">
+                        <div class="analysis-score">
+                            <h4>総合スコア: ${analysis.score}/100</h4>
+                        </div>
+                        <div class="analysis-details">
+                            <h4>分析詳細</h4>
+                            <ul>
+                                ${analysis.details.map(detail => `<li>${detail}</li>`).join('')}
+                            </ul>
+                        </div>
+                        <div class="analysis-suggestions">
+                            <h4>改善提案</h4>
+                            <ul>
+                                ${analysis.suggestions.map(suggestion => `<li>${suggestion}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // 初期状態で最初のカテゴリを選択
+            if (categories.length > 0) {
+                categories[0].click();
+            }
+        });
+        
+        // プロンプト分析関数（シンプルな分析ロジック）
+        function analyzePrompt(prompt) {
+            let score = 0;
+            const details = [];
+            const suggestions = [];
+            
+            // 役割設定の確認
+            if (prompt.includes('あなたは') || prompt.includes('として')) {
+                score += 20;
+                details.push('✅ 役割設定が含まれています');
+            } else {
+                suggestions.push('役割設定を追加すると、より専門的な回答が期待できます');
+            }
+            
+            // 具体性の確認
+            if (prompt.length > 100) {
+                score += 20;
+                details.push('✅ 十分な詳細情報が含まれています');
+            } else {
+                suggestions.push('より詳細な背景情報や条件を追加してください');
+            }
+            
+            // 制約条件の確認
+            if (prompt.includes('条件') || prompt.includes('制約') || prompt.includes('・') || prompt.includes('-')) {
+                score += 15;
+                details.push('✅ 制約条件や条件が明示されています');
+            } else {
+                suggestions.push('制約条件や要求事項を明確に指定してください');
+            }
+            
+            // 出力形式の確認
+            if (prompt.includes('形式') || prompt.includes('構成') || prompt.includes('文字') || prompt.includes('項目')) {
+                score += 15;
+                details.push('✅ 出力形式の指定があります');
+            } else {
+                suggestions.push('期待する出力形式を明確に指定してください');
+            }
+            
+            // 背景情報の確認
+            if (prompt.includes('背景') || prompt.includes('状況') || prompt.includes('目的')) {
+                score += 15;
+                details.push('✅ 背景情報が含まれています');
+            } else {
+                suggestions.push('背景情報や目的を追加すると、より適切な回答が得られます');
+            }
+            
+            // 構造化の確認
+            if (prompt.includes('【') || prompt.includes('1.') || prompt.includes('・')) {
+                score += 15;
+                details.push('✅ 構造化された読みやすい形式です');
+            } else {
+                suggestions.push('プロンプトを構造化すると、AIが理解しやすくなります');
+            }
+            
+            if (suggestions.length === 0) {
+                suggestions.push('素晴らしいプロンプトです！このまま使用できます。');
+            }
+            
+            return { score, details, suggestions };
+        }
+    </script>
+</body>
+</html> 

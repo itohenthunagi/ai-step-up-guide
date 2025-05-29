@@ -1,0 +1,207 @@
+<!-- ========================================
+     アクセシビリティ強化コンポーネント
+     WCAG 2.1 AA準拠、キーボードナビゲーション対応
+========================================= -->
+
+<!-- スキップリンクコンテナ -->
+<div class="skip-links" role="navigation" aria-label="スキップリンク">
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    <a href="#main-navigation" class="skip-link">ナビゲーションにスキップ</a>
+    <a href="#site-footer" class="skip-link">フッターにスキップ</a>
+    <a href="#search-form" class="skip-link">検索にスキップ</a>
+</div>
+
+<!-- アクセシビリティツールバー（将来実装） -->
+<div id="accessibility-toolbar" class="accessibility-toolbar" role="toolbar" aria-label="アクセシビリティ設定">
+    <h2 class="toolbar-title sr-only">アクセシビリティ設定</h2>
+    
+    <!-- フォントサイズ調整 -->
+    <div class="toolbar-group" role="group" aria-labelledby="font-size-title">
+        <h3 id="font-size-title" class="toolbar-group-title">文字サイズ</h3>
+        <button type="button" class="toolbar-btn font-size-btn" data-action="font-decrease" aria-label="文字サイズを小さくする" title="文字サイズ: 小">
+            <span class="btn-icon" aria-hidden="true">🔤</span>
+            <span class="btn-text">小</span>
+        </button>
+        <button type="button" class="toolbar-btn font-size-btn" data-action="font-normal" aria-label="文字サイズを標準にする" title="文字サイズ: 標準">
+            <span class="btn-icon" aria-hidden="true">🔤</span>
+            <span class="btn-text">標準</span>
+        </button>
+        <button type="button" class="toolbar-btn font-size-btn" data-action="font-increase" aria-label="文字サイズを大きくする" title="文字サイズ: 大">
+            <span class="btn-icon" aria-hidden="true">🔤</span>
+            <span class="btn-text">大</span>
+        </button>
+    </div>
+    
+    <!-- コントラスト調整 -->
+    <div class="toolbar-group" role="group" aria-labelledby="contrast-title">
+        <h3 id="contrast-title" class="toolbar-group-title">コントラスト</h3>
+        <button type="button" class="toolbar-btn contrast-btn" data-action="contrast-normal" aria-label="通常のコントラスト" title="コントラスト: 通常">
+            <span class="btn-icon" aria-hidden="true">🎨</span>
+            <span class="btn-text">通常</span>
+        </button>
+        <button type="button" class="toolbar-btn contrast-btn" data-action="contrast-high" aria-label="高コントラスト" title="コントラスト: 高">
+            <span class="btn-icon" aria-hidden="true">🎨</span>
+            <span class="btn-text">高</span>
+        </button>
+    </div>
+    
+    <!-- 読み上げ機能（将来実装） -->
+    <div class="toolbar-group" role="group" aria-labelledby="speech-title">
+        <h3 id="speech-title" class="toolbar-group-title">読み上げ</h3>
+        <button type="button" class="toolbar-btn speech-btn" data-action="speech-toggle" aria-label="読み上げ機能の開始・停止" title="読み上げ">
+            <span class="btn-icon" aria-hidden="true">🔊</span>
+            <span class="btn-text">読み上げ</span>
+        </button>
+    </div>
+    
+    <!-- ツールバー開閉ボタン -->
+    <button type="button" class="toolbar-toggle" aria-label="アクセシビリティツールバーを開く・閉じる" aria-expanded="false" aria-controls="accessibility-toolbar">
+        <span class="toggle-icon" aria-hidden="true">♿</span>
+        <span class="toggle-text">アクセシビリティ</span>
+    </button>
+</div>
+
+<!-- フォーカス管理・キーボードナビゲーション -->
+<div id="focus-manager" class="focus-manager" aria-hidden="true">
+    <!-- フォーカストラップ用の要素 -->
+    <div class="focus-trap-start" tabindex="0" aria-hidden="true"></div>
+    <div class="focus-trap-end" tabindex="0" aria-hidden="true"></div>
+    
+    <!-- フォーカス可視化強化 -->
+    <style id="focus-enhancement">
+        /* 高コントラストフォーカス表示 */
+        .enhanced-focus *:focus {
+            outline: 3px solid #FF6B35 !important;
+            outline-offset: 2px !important;
+            box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.3) !important;
+        }
+    </style>
+</div>
+
+<!-- スクリーンリーダー用の追加情報 -->
+<div class="sr-only-content" aria-hidden="true">
+    <!-- ページ構造の説明 -->
+    <div id="page-structure-description" class="sr-only">
+        このページは以下の構造になっています：
+        メインナビゲーション、パンくずリスト、メインコンテンツ、サイドバー（該当時）、フッター。
+        Tabキーで要素間を移動し、Enterキーで選択できます。
+    </div>
+    
+    <!-- ナビゲーション説明 -->
+    <div id="navigation-help" class="sr-only">
+        矢印キーでメニュー項目間を移動できます。
+        Escキーでメニューを閉じることができます。
+    </div>
+    
+    <!-- フォーム操作説明 -->
+    <div id="form-help" class="sr-only">
+        入力フィールドでは、Tabキーで次の項目に移動し、
+        Shift+Tabキーで前の項目に戻ることができます。
+    </div>
+</div>
+
+<!-- ARIA Live Regionアナウンス領域 -->
+<div class="aria-live-regions">
+    <!-- ページ変更通知 -->
+    <div id="page-announcements" class="sr-only" aria-live="polite" aria-atomic="true">
+        <!-- ページ読み込み完了時に動的に更新される -->
+    </div>
+    
+    <!-- フォーム検証結果 -->
+    <div id="form-announcements" class="sr-only" aria-live="assertive" aria-atomic="true">
+        <!-- フォーム送信結果等を動的に通知 -->
+    </div>
+    
+    <!-- ステータス変更通知 -->
+    <div id="status-announcements" class="sr-only" aria-live="polite" aria-atomic="false">
+        <!-- 進捗状況やステータス変更を通知 -->
+    </div>
+</div>
+
+<!-- キーボードショートカット情報 -->
+<div id="keyboard-shortcuts" class="keyboard-shortcuts" hidden>
+    <h2 class="shortcuts-title">キーボードショートカット</h2>
+    <dl class="shortcuts-list">
+        <dt class="shortcut-key">Alt + 1</dt>
+        <dd class="shortcut-description">メインコンテンツに移動</dd>
+        
+        <dt class="shortcut-key">Alt + 2</dt>
+        <dd class="shortcut-description">メインナビゲーションに移動</dd>
+        
+        <dt class="shortcut-key">Alt + 3</dt>
+        <dd class="shortcut-description">検索フォームに移動</dd>
+        
+        <dt class="shortcut-key">Alt + F</dt>
+        <dd class="shortcut-description">フッターに移動</dd>
+        
+        <dt class="shortcut-key">Esc</dt>
+        <dd class="shortcut-description">モーダル・メニューを閉じる</dd>
+        
+        <dt class="shortcut-key">Ctrl + K</dt>
+        <dd class="shortcut-description">検索フォームにフォーカス</dd>
+        
+        <dt class="shortcut-key">?</dt>
+        <dd class="shortcut-description">このヘルプを表示</dd>
+    </dl>
+    
+    <button type="button" class="shortcuts-close" aria-label="キーボードショートカットヘルプを閉じる">
+        <span class="close-icon" aria-hidden="true">✕</span>
+        <span class="close-text">閉じる</span>
+    </button>
+</div>
+
+<!-- プログレス・ローディング状態 -->
+<div class="progress-indicators">
+    <!-- ページ読み込み進捗 -->
+    <div id="page-loading" class="loading-indicator" aria-hidden="true" role="status">
+        <div class="loading-spinner">
+            <span class="sr-only">ページを読み込み中です。しばらくお待ちください。</span>
+        </div>
+        <div class="loading-text" aria-live="polite">読み込み中...</div>
+    </div>
+    
+    <!-- フォーム送信進捗 -->
+    <div id="form-submitting" class="submitting-indicator" aria-hidden="true" role="status">
+        <div class="submitting-spinner">
+            <span class="sr-only">データを送信中です。しばらくお待ちください。</span>
+        </div>
+        <div class="submitting-text" aria-live="assertive">送信中...</div>
+    </div>
+</div>
+
+<!-- エラー表示領域 -->
+<div class="error-regions">
+    <!-- 一般エラー表示 -->
+    <div id="general-errors" class="error-container" role="alert" aria-live="assertive" hidden>
+        <h2 class="error-title">エラーが発生しました</h2>
+        <div class="error-content">
+            <!-- 動的にエラー内容が挿入される -->
+        </div>
+    </div>
+    
+    <!-- フォームエラー表示 -->
+    <div id="form-errors" class="form-error-container" role="alert" aria-live="assertive" hidden>
+        <h2 class="form-error-title">入力エラーがあります</h2>
+        <ul class="form-error-list">
+            <!-- 動的にエラーリストが挿入される -->
+        </ul>
+    </div>
+</div>
+
+<!-- タブレット・スマホ用アクセシビリティ強化 -->
+<div class="mobile-accessibility">
+    <!-- タッチターゲット最小サイズ確保のためのスタイル -->
+    <style id="touch-target-enhancement">
+        @media (max-width: 768px) {
+            .touch-target {
+                min-height: 44px !important;
+                min-width: 44px !important;
+            }
+        }
+    </style>
+    
+    <!-- 画面向き変更通知 -->
+    <div id="orientation-change" class="sr-only" aria-live="polite">
+        <!-- 画面向き変更時に動的に更新される -->
+    </div>
+</div> 

@@ -1,0 +1,163 @@
+<!-- メインナビゲーションコンテナ -->
+<div class="navigation-container">
+    <!-- パンくずリスト -->
+    <nav class="breadcrumb-navigation" role="navigation" aria-label="パンくずリスト">
+        <ol class="breadcrumb-list">
+            <li class="breadcrumb-item">
+                <a href="/" class="breadcrumb-link" aria-label="ホームページに戻る">
+                    <span class="breadcrumb-icon" aria-hidden="true">🏠</span>
+                    <span class="breadcrumb-text">ホーム</span>
+                </a>
+            </li>
+            <!-- 動的に生成される部分（テンプレート変数使用） -->
+            {{breadcrumb_items}}
+        </ol>
+    </nav>
+    
+    <!-- メインナビゲーション -->
+    <nav class="main-navigation" role="navigation" aria-label="メインナビゲーション">
+        <div class="nav-header">
+            <h2 class="nav-title">学習コンテンツ</h2>
+            <p class="nav-description">段階的に学習を進めて、生成AIを活用できるようになりましょう</p>
+        </div>
+        
+        <ul class="main-nav-list">
+            <!-- ホーム -->
+            <li class="main-nav-item nav-item-home">
+                <a href="/" class="main-nav-link" aria-current="{{home_current}}" data-page="home">
+                    <div class="nav-link-content">
+                        <div class="nav-link-header">
+                            <span class="nav-link-icon" aria-hidden="true">🏠</span>
+                            <h3 class="nav-link-title">ホーム</h3>
+                        </div>
+                        <p class="nav-link-description">サイト全体の概要と学習の進め方をご紹介</p>
+                        <div class="nav-link-meta">
+                            <span class="nav-meta-badge nav-meta-start">スタート</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            
+            <!-- 生成AIの基礎理解 -->
+            <li class="main-nav-item nav-item-basics">
+                <a href="/src/pages/ai-basics.html" class="main-nav-link" aria-current="{{basics_current}}" data-page="ai-basics">
+                    <div class="nav-link-content">
+                        <div class="nav-link-header">
+                            <span class="nav-link-icon" aria-hidden="true">📚</span>
+                            <h3 class="nav-link-title">生成AIの基礎理解</h3>
+                        </div>
+                        <p class="nav-link-description">生成AIとは何か、基本的な知識を身につけましょう</p>
+                        <div class="nav-link-meta">
+                            <span class="nav-meta-badge nav-meta-level">Step 1</span>
+                            <span class="nav-meta-time">約15分</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            
+            <!-- 解像度を上げるために -->
+            <li class="main-nav-item nav-item-resolution">
+                <a href="/src/pages/improve-resolution.html" class="main-nav-link" aria-current="{{resolution_current}}" data-page="improve-resolution">
+                    <div class="nav-link-content">
+                        <div class="nav-link-header">
+                            <span class="nav-link-icon" aria-hidden="true">🎯</span>
+                            <h3 class="nav-link-title">解像度を上げるために</h3>
+                        </div>
+                        <p class="nav-link-description">より質の高いAI活用のための考え方とテクニック</p>
+                        <div class="nav-link-meta">
+                            <span class="nav-meta-badge nav-meta-level">Step 2</span>
+                            <span class="nav-meta-time">約20分</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            
+            <!-- プロンプトエンジニアリング -->
+            <li class="main-nav-item nav-item-engineering">
+                <a href="/src/pages/prompt-engineering.html" class="main-nav-link" aria-current="{{engineering_current}}" data-page="prompt-engineering">
+                    <div class="nav-link-content">
+                        <div class="nav-link-header">
+                            <span class="nav-link-icon" aria-hidden="true">⚙️</span>
+                            <h3 class="nav-link-title">プロンプトエンジニアリング</h3>
+                        </div>
+                        <p class="nav-link-description">効果的な指示（プロンプト）を作成するための技術</p>
+                        <div class="nav-link-meta">
+                            <span class="nav-meta-badge nav-meta-level">Step 3</span>
+                            <span class="nav-meta-time">約25分</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            
+            <!-- プロンプト作成 -->
+            <li class="main-nav-item nav-item-creator">
+                <a href="/src/pages/prompt-creator.html" class="main-nav-link" aria-current="{{creator_current}}" data-page="prompt-creator">
+                    <div class="nav-link-content">
+                        <div class="nav-link-header">
+                            <span class="nav-link-icon" aria-hidden="true">✏️</span>
+                            <h3 class="nav-link-title">プロンプトを作成する</h3>
+                        </div>
+                        <p class="nav-link-description">実践的にプロンプト作成を体験し、スキルを習得</p>
+                        <div class="nav-link-meta">
+                            <span class="nav-meta-badge nav-meta-level">Step 4</span>
+                            <span class="nav-meta-time">約30分</span>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        
+        <!-- 学習進捗インジケーター（将来実装） -->
+        <div class="learning-progress" aria-labelledby="progress-title">
+            <h3 id="progress-title" class="progress-title">学習進捗</h3>
+            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="学習進捗: 0%">
+                <div class="progress-fill" data-progress="0"></div>
+            </div>
+            <p class="progress-text">
+                <span class="progress-current" data-completed="0">0</span> / 
+                <span class="progress-total">4</span> ステップ完了
+            </p>
+        </div>
+    </nav>
+    
+    <!-- サブナビゲーション（ページ内リンク等） -->
+    <nav class="sub-navigation" role="navigation" aria-label="ページ内ナビゲーション">
+        <div class="sub-nav-header">
+            <h3 class="sub-nav-title">このページの内容</h3>
+        </div>
+        
+        <ul class="sub-nav-list">
+            <!-- 動的に生成される部分（各ページの見出しに対応） -->
+            {{page_navigation_items}}
+        </ul>
+        
+        <!-- ページアクション -->
+        <div class="page-actions">
+            <button type="button" class="page-action-btn bookmark-btn" aria-label="このページをブックマーク" title="ブックマーク">
+                <span class="action-icon" aria-hidden="true">📑</span>
+                <span class="action-text">ブックマーク</span>
+            </button>
+            
+            <button type="button" class="page-action-btn share-btn" aria-label="このページを共有" title="共有">
+                <span class="action-icon" aria-hidden="true">🔗</span>
+                <span class="action-text">共有</span>
+            </button>
+            
+            <button type="button" class="page-action-btn print-btn" aria-label="このページを印刷" title="印刷" onclick="window.print()">
+                <span class="action-icon" aria-hidden="true">🖨️</span>
+                <span class="action-text">印刷</span>
+            </button>
+        </div>
+    </nav>
+</div>
+
+<!-- ナビゲーション関連のスキーマ（構造化データ） -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {{breadcrumb_schema_items}}
+    ]
+}
+</script> 

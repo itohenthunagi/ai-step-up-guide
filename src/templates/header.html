@@ -1,0 +1,100 @@
+<!-- ヘッダーコンテナ -->
+<div class="header-container">
+    <!-- ヘッダー上部（サイトタイトル・ロゴエリア） -->
+    <div class="header-top">
+        <!-- サイトロゴ・タイトル -->
+        <div class="site-branding">
+            <a href="/" class="site-logo-link" aria-label="生成AIステップアップガイド ホームページに戻る">
+                <!-- ロゴ画像（将来用） -->
+                <!-- <img src="/assets/images/logo.svg" alt="生成AIステップアップガイド" class="site-logo" width="120" height="40"> -->
+                
+                <!-- テキストロゴ（現在の実装） -->
+                <h1 class="site-title">
+                    <span class="site-title-main">生成AI</span>
+                    <span class="site-title-sub">ステップアップガイド</span>
+                </h1>
+                <p class="site-tagline">AIを身近に、もっと楽しく</p>
+            </a>
+        </div>
+        
+        <!-- ヘッダーユーティリティ（将来的な拡張用） -->
+        <div class="header-utilities">
+            <!-- 検索ボタン（将来実装） -->
+            <!-- <button type="button" class="search-toggle" aria-label="サイト内検索を開く" aria-expanded="false" aria-controls="search-form">
+                <span class="search-icon" aria-hidden="true">🔍</span>
+            </button> -->
+            
+            <!-- ダークモード切り替え（将来実装） -->
+            <!-- <button type="button" class="theme-toggle" aria-label="ダークモード切り替え">
+                <span class="theme-icon" aria-hidden="true">🌙</span>
+            </button> -->
+            
+            <!-- モバイルメニュー開閉ボタン -->
+            <button type="button" class="mobile-menu-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="main-navigation">
+                <span class="hamburger-icon">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </span>
+                <span class="mobile-menu-text">メニュー</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- ヘッダー下部（メインナビゲーション） -->
+    <div class="header-bottom">
+        <!-- メインナビゲーション -->
+        <nav class="header-navigation" role="navigation" aria-label="メインナビゲーション">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="/" class="nav-link nav-link-home" aria-current="{{home_current}}">
+                        <span class="nav-icon" aria-hidden="true">🏠</span>
+                        <span class="nav-text">ホーム</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/ai-basics.html" class="nav-link nav-link-basics" aria-current="{{basics_current}}">
+                        <span class="nav-icon" aria-hidden="true">📚</span>
+                        <span class="nav-text">AI基礎理解</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/improve-resolution.html" class="nav-link nav-link-resolution" aria-current="{{resolution_current}}">
+                        <span class="nav-icon" aria-hidden="true">🎯</span>
+                        <span class="nav-text">解像度向上</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/prompt-engineering.html" class="nav-link nav-link-engineering" aria-current="{{engineering_current}}">
+                        <span class="nav-icon" aria-hidden="true">⚙️</span>
+                        <span class="nav-text">プロンプトエンジニアリング</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/prompt-creator.html" class="nav-link nav-link-creator" aria-current="{{creator_current}}">
+                        <span class="nav-icon" aria-hidden="true">✏️</span>
+                        <span class="nav-text">プロンプト作成</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <!-- 検索フォーム（将来実装・現在は非表示） -->
+        <div id="search-form" class="search-form" hidden>
+            <form class="search-form-inner" role="search" aria-label="サイト内検索">
+                <label for="search-input" class="search-label sr-only">検索キーワードを入力</label>
+                <input type="search" id="search-input" class="search-input" placeholder="検索キーワードを入力..." autocomplete="off" aria-describedby="search-help">
+                <button type="submit" class="search-submit" aria-label="検索を実行">
+                    <span class="search-submit-icon" aria-hidden="true">🔍</span>
+                </button>
+                <button type="button" class="search-close" aria-label="検索を閉じる">
+                    <span class="search-close-icon" aria-hidden="true">✕</span>
+                </button>
+                <div id="search-help" class="search-help sr-only">エンターキーまたは検索ボタンで検索を実行します</div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ヘッダー固定時のスペーサー（JavaScriptで制御） -->
+<div class="header-spacer" aria-hidden="true"></div> 

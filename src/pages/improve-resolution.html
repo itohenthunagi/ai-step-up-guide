@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO基本設定 -->
+    <title>解像度を上げる | 生成AIステップアップガイド</title>
+    <meta name="description" content="生成AIの活用解像度を上げる方法を学習。目的意識の明確化、質の高いインプット、フィードバックループなど実践的テクニックを解説します。">
+    <meta name="keywords" content="生成AI,解像度,品質向上,活用方法,実践的,テクニック,フィードバック">
+    <meta name="author" content="生成AIステップアップガイド">
+    <meta name="robots" content="index, follow">
+    
+    <!-- OGP設定 -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="解像度を上げる | 生成AIステップアップガイド">
+    <meta property="og:description" content="生成AIの活用解像度を上げる方法を学習。目的意識の明確化、質の高いインプット、フィードバックループなど実践的テクニックを解説します。">
+    <meta property="og:url" content="/src/pages/improve-resolution.html">
+    <meta property="og:site_name" content="生成AIステップアップガイド">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:image" content="/assets/images/improve-resolution-og.png">
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preload" href="/style.css" as="style">
+    
+    <!-- フォント読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="page-improve-resolution">
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    
+    <!-- ヘッダー -->
+    <header id="site-header" class="site-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">
+                    <a href="/index.html" class="site-title-link">生成AIステップアップガイド</a>
+                </h1>
+            </div>
+        </div>
+    </header>
+    
+    <!-- メインナビゲーション -->
+    <nav id="main-navigation" class="main-navigation" role="navigation" aria-label="メインナビゲーション">
+        <div class="container">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">ホーム</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/ai-basics.html" class="nav-link">基礎理解</a>
+                </li>
+                <li class="nav-item nav-item-current">
+                    <a href="/src/pages/improve-resolution.html" class="nav-link" aria-current="page">解像度向上</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/prompt-engineering.html" class="nav-link">プロンプトエンジニアリング</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/src/pages/prompt-creator.html" class="nav-link">プロンプト作成</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- パンくずリスト -->
+    <nav id="breadcrumb" class="breadcrumb" role="navigation" aria-label="パンくずリスト">
+        <div class="container">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/index.html" class="breadcrumb-link">ホーム</a>
+                </li>
+                <li class="breadcrumb-item breadcrumb-current" aria-current="page">
+                    解像度を上げる
+                </li>
+            </ol>
+        </div>
+    </nav>
+    
+    <!-- メインコンテンツ -->
+    <main id="main-content" class="main-content" role="main">
+        <div class="container">
+            <!-- ページヘッダー -->
+            <header class="page-header">
+                <h1 class="page-title">解像度を上げる</h1>
+                <p class="page-description">
+                    生成AIの活用で「解像度を上げる」とは？<br>
+                    より質の高いアウトプットを得るための考え方とテクニックを学びましょう。
+                </p>
+            </header>
+            
+            <!-- ページコンテンツエリア -->
+            <div class="page-content">
+                
+                <!-- セクション1: "解像度を上げる"とは？ -->
+                <section class="content-section" id="what-is-resolution">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">🎯</span>
+                        "解像度を上げる"とはどういうことか？
+                    </h2>
+                    
+                    <div class="intro-text">
+                        <p class="lead">
+                            生成AI活用における「解像度を上げる」とは、<strong>より具体的で精度の高い結果を得ること</strong>です。
+                            曖昧な質問ではなく、明確な目的を持って、質の高いアウトプットを引き出すことを指します。
+                        </p>
+                    </div>
+                    
+                    <div class="comparison-container">
+                        <div class="comparison-card comparison-low">
+                            <h3 class="comparison-title">
+                                <span class="comparison-icon">📱</span>
+                                解像度が低い活用
+                            </h3>
+                            <div class="comparison-content">
+                                <div class="example-item">
+                                    <h4>質問例</h4>
+                                    <p class="example-text">"ビジネスについて教えて"</p>
+                                </div>
+                                <div class="result-item">
+                                    <h4>結果</h4>
+                                    <ul>
+                                        <li>広範囲で浅い情報</li>
+                                        <li>具体性に欠ける回答</li>
+                                        <li>実際に使えない抽象的内容</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-card comparison-high">
+                            <h3 class="comparison-title">
+                                <span class="comparison-icon">🖥️</span>
+                                解像度が高い活用
+                            </h3>
+                            <div class="comparison-content">
+                                <div class="example-item">
+                                    <h4>質問例</h4>
+                                    <p class="example-text">"30代のIT企業員が副業でオンライン講座を始める際の、最初の3ヶ月間のマーケティング戦略を具体的に教えて"</p>
+                                </div>
+                                <div class="result-item">
+                                    <h4>結果</h4>
+                                    <ul>
+                                        <li>具体的で実行可能な内容</li>
+                                        <li>ターゲットが明確</li>
+                                        <li>期間とアクションが詳細</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- セクション2: 4つのステップ -->
+                <section class="content-section" id="four-steps">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">📈</span>
+                        解像度を上げる4つのステップ
+                    </h2>
+                    
+                    <p class="section-intro">
+                        効果的に生成AIを活用するため、段階的に解像度を上げていきましょう。
+                    </p>
+                    
+                    <div class="steps-container">
+                        <div class="step-item">
+                            <div class="step-header">
+                                <span class="step-number">1</span>
+                                <h3 class="step-title">目的を明確にする</h3>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    何のためにAIを使うのか、何を達成したいのかを具体的に定義します。
+                                </p>
+                                <div class="step-details">
+                                    <h4>具体的なやり方</h4>
+                                    <ul>
+                                        <li><strong>5W1H</strong>で整理する（誰が、何を、いつ、どこで、なぜ、どのように）</li>
+                                        <li><strong>成功の基準</strong>を明確にする</li>
+                                        <li><strong>制約条件</strong>を整理する（時間、予算、リソースなど）</li>
+                                    </ul>
+                                </div>
+                                <div class="step-example">
+                                    <h4>例：ブログ記事作成の場合</h4>
+                                    <div class="example-grid">
+                                        <div class="example-bad">
+                                            <h5>❌ 曖昧な目的</h5>
+                                            <p>"面白いブログを書きたい"</p>
+                                        </div>
+                                        <div class="example-good">
+                                            <h5>✅ 明確な目的</h5>
+                                            <p>"Web制作初心者向けに、HTMLの基礎を3000文字で分かりやすく解説する記事を書いて、SEO効果も狙いたい"</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-header">
+                                <span class="step-number">2</span>
+                                <h3 class="step-title">質の高いインプットを用意する</h3>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    AIに与える情報や指示の質を高めることで、より良いアウトプットを期待できます。
+                                </p>
+                                <div class="step-details">
+                                    <h4>インプットの質を高める方法</h4>
+                                    <ul>
+                                        <li><strong>背景情報</strong>を詳しく提供する</li>
+                                        <li><strong>具体例</strong>や<strong>参考資料</strong>を示す</li>
+                                        <li><strong>制約や要求事項</strong>を明確に伝える</li>
+                                        <li><strong>期待する形式</strong>を指定する</li>
+                                    </ul>
+                                </div>
+                                <div class="input-examples">
+                                    <div class="input-category">
+                                        <h4>背景情報の例</h4>
+                                        <ul>
+                                            <li>ターゲット読者の特徴</li>
+                                            <li>業界や分野の文脈</li>
+                                            <li>既存のコンテンツとの差別化点</li>
+                                        </ul>
+                                    </div>
+                                    <div class="input-category">
+                                        <h4>形式指定の例</h4>
+                                        <ul>
+                                            <li>文字数や段落数</li>
+                                            <li>見出し構成</li>
+                                            <li>トーンや文体</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-header">
+                                <span class="step-number">3</span>
+                                <h3 class="step-title">アウトプットから学ぶ</h3>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    AIが生成した結果を鵜呑みにせず、批判的に検討し、改善点を見つけます。
+                                </p>
+                                <div class="step-details">
+                                    <h4>アウトプット評価のポイント</h4>
+                                    <ul>
+                                        <li><strong>目的達成度</strong>：当初の目的を満たしているか？</li>
+                                        <li><strong>正確性</strong>：事実に基づいた正しい情報か？</li>
+                                        <li><strong>実用性</strong>：実際に使える内容か？</li>
+                                        <li><strong>独自性</strong>：オリジナリティがあるか？</li>
+                                    </ul>
+                                </div>
+                                <div class="evaluation-checklist">
+                                    <h4>チェックリスト例</h4>
+                                    <div class="checklist-grid">
+                                        <div class="checklist-item">
+                                            <h5>内容の質</h5>
+                                            <ul class="checklist">
+                                                <li>論理的で一貫性がある</li>
+                                                <li>具体例が適切</li>
+                                                <li>読みやすい構成</li>
+                                            </ul>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <h5>要求適合性</h5>
+                                            <ul class="checklist">
+                                                <li>指定した形式に従っている</li>
+                                                <li>文字数等の制約を満たしている</li>
+                                                <li>ターゲットに適している</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-item">
+                            <div class="step-header">
+                                <span class="step-number">4</span>
+                                <h3 class="step-title">フィードバックループを回す</h3>
+                            </div>
+                            <div class="step-content">
+                                <p class="step-description">
+                                    改善点を見つけたら、プロンプトを調整して再度試し、継続的に品質を向上させます。
+                                </p>
+                                <div class="step-details">
+                                    <h4>効果的なフィードバック方法</h4>
+                                    <ul>
+                                        <li><strong>具体的な指摘</strong>：「もっと詳しく」ではなく「〇〇の部分を△△の観点で詳細化して」</li>
+                                        <li><strong>段階的改善</strong>：一度に全てを修正せず、重要度順に段階的に</li>
+                                        <li><strong>バリエーション生成</strong>：複数パターンを試して最適解を見つける</li>
+                                    </ul>
+                                </div>
+                                <div class="feedback-example">
+                                    <h4>フィードバック実践例</h4>
+                                    <div class="feedback-flow">
+                                        <div class="feedback-step">
+                                            <h5>初回生成</h5>
+                                            <p>基本的なプロンプトで生成</p>
+                                        </div>
+                                        <div class="feedback-arrow">→</div>
+                                        <div class="feedback-step">
+                                            <h5>評価・分析</h5>
+                                            <p>不足点や改善点を特定</p>
+                                        </div>
+                                        <div class="feedback-arrow">→</div>
+                                        <div class="feedback-step">
+                                            <h5>プロンプト調整</h5>
+                                            <p>具体的な改善指示を追加</p>
+                                        </div>
+                                        <div class="feedback-arrow">→</div>
+                                        <div class="feedback-step">
+                                            <h5>再生成・比較</h5>
+                                            <p>改善度を確認し、必要に応じて繰り返し</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- セクション3: 実践的な事例比較 -->
+                <section class="content-section" id="case-studies">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">📊</span>
+                        実践的な事例比較
+                    </h2>
+                    
+                    <p class="section-intro">
+                        具体的な事例を通して、解像度の違いとその効果を確認してみましょう。
+                    </p>
+                    
+                    <div class="case-studies-container">
+                        <div class="case-study">
+                            <h3 class="case-title">事例1：メール作成</h3>
+                            
+                            <div class="case-comparison">
+                                <div class="case-before">
+                                    <h4 class="case-subtitle">❌ 解像度が低い例</h4>
+                                    <div class="case-prompt">
+                                        <h5>プロンプト</h5>
+                                        <p>"お客様にお詫びのメールを書いて"</p>
+                                    </div>
+                                    <div class="case-result">
+                                        <h5>問題点</h5>
+                                        <ul>
+                                            <li>お詫びの理由が不明確</li>
+                                            <li>相手との関係性が分からない</li>
+                                            <li>どの程度のお詫びが必要か不明</li>
+                                            <li>次のアクションが曖昧</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="case-after">
+                                    <h4 class="case-subtitle">✅ 解像度が高い例</h4>
+                                    <div class="case-prompt">
+                                        <h5>プロンプト</h5>
+                                        <p>"5年来の法人顧客（ABC株式会社田中様）に対して、昨日納期が2日遅れることが判明した Web制作案件について、丁寧にお詫びし、具体的な対応策と今後の予防策を示すビジネスメールを作成して。件名も含めて、誠実で信頼回復につながる内容にしたい。"</p>
+                                    </div>
+                                    <div class="case-result">
+                                        <h5>改善点</h5>
+                                        <ul>
+                                            <li>具体的な状況と関係性が明確</li>
+                                            <li>お詫びの理由が具体的</li>
+                                            <li>求める結果（信頼回復）が明確</li>
+                                            <li>対応策の方向性が示されている</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="case-study">
+                            <h3 class="case-title">事例2：企画書作成</h3>
+                            
+                            <div class="case-comparison">
+                                <div class="case-before">
+                                    <h4 class="case-subtitle">❌ 解像度が低い例</h4>
+                                    <div class="case-prompt">
+                                        <h5>プロンプト</h5>
+                                        <p>"新サービスの企画書を作って"</p>
+                                    </div>
+                                    <div class="case-result">
+                                        <h5>問題点</h5>
+                                        <ul>
+                                            <li>業界・分野が不明</li>
+                                            <li>ターゲット顧客が不明確</li>
+                                            <li>予算や規模感が分からない</li>
+                                            <li>既存サービスとの関係が不明</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="case-after">
+                                    <h4 class="case-subtitle">✅ 解像度が高い例</h4>
+                                    <div class="case-prompt">
+                                        <h5>プロンプト</h5>
+                                        <p>"IT企業向けに、リモートワーク環境での従業員エンゲージメント向上を支援するSaaSサービスの企画書を作成。ターゲットは従業員数50-300名の企業。月額料金10万円以下、6ヶ月で収益化目標。競合分析、機能概要、マーケティング戦略、収益予測を含む10ページ程度の資料にして。"</p>
+                                    </div>
+                                    <div class="case-result">
+                                        <h5>改善点</h5>
+                                        <ul>
+                                            <li>明確な業界とターゲット設定</li>
+                                            <li>具体的な価格帯と目標</li>
+                                            <li>必要な要素が明示されている</li>
+                                            <li>成果物の形式が具体的</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- セクション4: よくある失敗パターンと対策 -->
+                <section class="content-section" id="common-mistakes">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">⚠️</span>
+                        よくある失敗パターンと対策
+                    </h2>
+                    
+                    <div class="mistakes-grid">
+                        <div class="mistake-card">
+                            <div class="mistake-header">
+                                <span class="mistake-icon">🎯</span>
+                                <h3 class="mistake-title">目的が曖昧</h3>
+                            </div>
+                            <div class="mistake-content">
+                                <div class="mistake-description">
+                                    <h4>よくある失敗</h4>
+                                    <p>"何となく良いものを作りたい"という曖昧な目的でAIを使う</p>
+                                </div>
+                                <div class="mistake-solution">
+                                    <h4>対策</h4>
+                                    <ul>
+                                        <li>具体的な成果物をイメージする</li>
+                                        <li>成功の基準を数値で設定する</li>
+                                        <li>「誰のために」「何のために」を明確にする</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mistake-card">
+                            <div class="mistake-header">
+                                <span class="mistake-icon">📝</span>
+                                <h3 class="mistake-title">情報不足</h3>
+                            </div>
+                            <div class="mistake-content">
+                                <div class="mistake-description">
+                                    <h4>よくある失敗</h4>
+                                    <p>背景情報や制約条件を伝えずに、最小限の指示だけで済ませる</p>
+                                </div>
+                                <div class="mistake-solution">
+                                    <h4>対策</h4>
+                                    <ul>
+                                        <li>関連する背景情報を積極的に提供</li>
+                                        <li>制約条件や前提条件を明示</li>
+                                        <li>参考例や期待する方向性を示す</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mistake-card">
+                            <div class="mistake-header">
+                                <span class="mistake-icon">🔄</span>
+                                <h3 class="mistake-title">一回限りの利用</h3>
+                            </div>
+                            <div class="mistake-content">
+                                <div class="mistake-description">
+                                    <h4>よくある失敗</h4>
+                                    <p>最初の結果をそのまま使い、改善や調整を行わない</p>
+                                </div>
+                                <div class="mistake-solution">
+                                    <h4>対策</h4>
+                                    <ul>
+                                        <li>結果を批判的に評価する習慣をつける</li>
+                                        <li>改善の余地を常に探す</li>
+                                        <li>複数回のやり取りで質を高める</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mistake-card">
+                            <div class="mistake-header">
+                                <span class="mistake-icon">🤖</span>
+                                <h3 class="mistake-title">AI任せ</h3>
+                            </div>
+                            <div class="mistake-content">
+                                <div class="mistake-description">
+                                    <h4>よくある失敗</h4>
+                                    <p>AIの出力をそのまま信じて、人間の判断を放棄する</p>
+                                </div>
+                                <div class="mistake-solution">
+                                    <h4>対策</h4>
+                                    <ul>
+                                        <li>最終的な判断は必ず人間が行う</li>
+                                        <li>事実確認を怠らない</li>
+                                        <li>専門知識や経験値と照らし合わせる</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 次のステップへの案内 -->
+                <section class="content-section" id="next-steps">
+                    <h2 class="section-title">
+                        <span class="section-icon" aria-hidden="true">🚀</span>
+                        次のステップ
+                    </h2>
+                    
+                    <p class="section-intro">
+                        解像度を上げる考え方を身につけたら、より具体的な技術を学んでいきましょう。
+                    </p>
+                    
+                    <div class="next-steps-grid">
+                        <div class="next-step-card">
+                            <div class="next-step-header">
+                                <span class="next-step-icon">⚡</span>
+                                <h3 class="next-step-title">プロンプトエンジニアリング</h3>
+                            </div>
+                            <div class="next-step-content">
+                                <p>
+                                    効果的なプロンプト作成の技術を体系的に学習。
+                                    具体的なテクニックやパターンを習得して、より高品質な結果を安定して得られるようになりましょう。
+                                </p>
+                                <a href="/src/pages/prompt-engineering.html" class="btn btn-primary">
+                                    プロンプトエンジニアリングを学ぶ
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="next-step-card">
+                            <div class="next-step-header">
+                                <span class="next-step-icon">🛠️</span>
+                                <h3 class="next-step-title">プロンプト作成</h3>
+                            </div>
+                            <div class="next-step-content">
+                                <p>
+                                    実際にプロンプトを作成して練習。
+                                    様々な場面で使えるテンプレートを活用して、実践的なスキルを身につけましょう。
+                                </p>
+                                <a href="/src/pages/prompt-creator.html" class="btn btn-outline">
+                                    プロンプト作成ページへ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="back-to-basics">
+                        <a href="/src/pages/ai-basics.html" class="btn btn-secondary">
+                            <span class="btn-icon" aria-hidden="true">📚</span>
+                            基礎理解に戻る
+                        </a>
+                    </div>
+                    
+                    <div class="home-link">
+                        <a href="/index.html" class="btn btn-secondary">
+                            <span class="btn-icon" aria-hidden="true">🏠</span>
+                            ホームに戻る
+                        </a>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </main>
+    
+    <!-- フッター -->
+    <footer id="site-footer" class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">生成AIステップアップガイド</h3>
+                    <p class="footer-description">
+                        生成AIを日常生活や業務で活用できるようになるための学習サイトです。
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">学習コンテンツ</h4>
+                    <ul class="footer-links">
+                        <li><a href="/src/pages/ai-basics.html" class="footer-link">基礎理解</a></li>
+                        <li><a href="/src/pages/improve-resolution.html" class="footer-link">解像度向上</a></li>
+                        <li><a href="/src/pages/prompt-engineering.html" class="footer-link">プロンプトエンジニアリング</a></li>
+                        <li><a href="/src/pages/prompt-creator.html" class="footer-link">プロンプト作成</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">サイト情報</h4>
+                    <ul class="footer-links">
+                        <li><a href="/index.html" class="footer-link">ホーム</a></li>
+                        <li><a href="#" class="footer-link">サイトマップ</a></li>
+                        <li><a href="#" class="footer-link">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; 2025 生成AIステップアップガイド. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- ページトップへ戻るボタン -->
+    <a href="#site-header" class="back-to-top" aria-label="ページトップへ戻る">
+        <span class="back-to-top-icon" aria-hidden="true">↑</span>
+        <span class="sr-only">ページトップへ戻る</span>
+    </a>
+    
+    <!-- JavaScript -->
+    <script>
+        // ページトップへ戻るボタンの表示制御
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // ステップ項目のプログレス表示（将来拡張用）
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step-item');
+            steps.forEach((step, index) => {
+                step.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html> 
