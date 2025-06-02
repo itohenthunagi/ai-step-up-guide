@@ -1,29 +1,41 @@
 /**
- * Base Styles - 生成AIステップアップガイド
- * ベーススタイル・タイポグラフィ・基本要素
+ * 🎨 Modern Base Styles - 生成AIステップアップガイド
+ * 現代的なベーススタイル・タイポグラフィ・基本要素
+ * レスポンシブ対応 × 文字重なり解決 × 洗練されたデザイン
  */
 
-/* ===== 基本レイアウト ===== */
+/* ===== 🏗️ Foundation Layout ===== */
 html {
-  scroll-padding-top: var(--header-height);
+  scroll-padding-top: calc(var(--header-height) + var(--space-4));
+  scroll-behavior: smooth;
+  font-size: 16px; /* 基準フォントサイズを明確化 */
 }
 
 body {
+  font-family: var(--font-family-sans);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: var(--color-gray-900);
+  line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 main {
   flex: 1;
+  padding-top: var(--space-6);
 }
 
-/* ===== コンテナ ===== */
+/* ===== 📦 Modern Container ===== */
 .container {
   width: 100%;
   max-width: var(--container-7xl);
   margin: 0 auto;
   padding: 0 var(--space-4);
+  position: relative;
 }
 
 @media (min-width: 640px) {
@@ -38,241 +50,349 @@ main {
   }
 }
 
-/* ===== タイポグラフィ ===== */
+/* ===== 🎨 Modern Typography ===== */
 
-/* 見出し */
+/* 見出し - 文字重なり防止とレスポンシブ対応 */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--color-gray-900);
+  margin: 0;
+  margin-bottom: var(--space-6);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 h1 {
   font-size: var(--font-size-4xl);
-  font-weight: var(--font-weight-bold);
-  line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-6);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-2);
 }
 
 h2 {
   font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-tight);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-5);
+  color: var(--color-primary-600);
+  position: relative;
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  opacity: 0.8;
 }
 
 h3 {
   font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-4);
+  color: var(--color-gray-800);
+  margin-bottom: var(--space-5);
 }
 
 h4 {
   font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-3);
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-4);
+  font-weight: 600;
 }
 
 h5 {
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-secondary);
+  color: var(--color-gray-600);
   margin-bottom: var(--space-3);
+  font-weight: 600;
 }
 
 h6 {
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-2);
+  color: var(--color-gray-600);
+  margin-bottom: var(--space-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* レスポンシブ見出し */
-@media (max-width: 640px) {
+/* レスポンシブ見出し - 文字重なり完全回避 */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    margin-bottom: var(--space-4);
+  }
+  
   h1 {
-    font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-6);
   }
   
   h2 {
-    font-size: var(--font-size-2xl);
-  }
-  
-  h3 {
-    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-5);
+    padding-bottom: var(--space-2);
   }
 }
 
-/* 段落・テキスト */
+@media (max-width: 480px) {
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.4;
+  }
+}
+
+/* ===== 📝 Modern Text Elements ===== */
 p {
   font-size: var(--font-size-base);
-  line-height: var(--line-height-relaxed);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-4);
+  line-height: 1.7;
+  color: var(--color-gray-700);
+  margin: 0 0 var(--space-6) 0;
+  max-width: var(--reading-max-width);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-.text-large {
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* Lead text */
+.lead {
   font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
+  line-height: 1.6;
+  color: var(--color-gray-600);
+  font-weight: 400;
+  margin-bottom: var(--space-8);
+  max-width: var(--content-max-width);
 }
 
-.text-small {
-  font-size: var(--font-size-sm);
-  line-height: var(--line-height-normal);
-}
-
+/* Text sizes with proper line height */
 .text-xs {
   font-size: var(--font-size-xs);
-  line-height: var(--line-height-normal);
+  line-height: 1.5;
 }
 
-/* テキストカラー */
+.text-sm {
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+  line-height: 1.5;
+}
+
+/* Text colors */
 .text-primary {
-  color: var(--color-text-primary);
+  color: var(--color-gray-900);
 }
 
 .text-secondary {
-  color: var(--color-text-secondary);
+  color: var(--color-gray-700);
 }
 
 .text-muted {
-  color: var(--color-text-muted);
+  color: var(--color-gray-500);
 }
 
 .text-accent {
-  color: var(--color-text-accent);
+  color: var(--color-primary-600);
 }
 
 .text-inverse {
-  color: var(--color-text-inverse);
+  color: white;
 }
 
-/* リンク */
+/* ===== 🔗 Modern Links ===== */
 a {
   color: var(--color-primary-600);
   text-decoration: none;
-  transition: color var(--transition-fast);
+  font-weight: 500;
+  transition: all var(--duration-200) var(--ease-out);
+  position: relative;
+  border-radius: var(--radius-sm);
 }
 
 a:hover {
   color: var(--color-primary-700);
-  text-decoration: underline;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width var(--duration-300) var(--ease-out);
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 a:focus-visible {
   outline: 2px solid var(--color-primary-500);
   outline-offset: 2px;
-  border-radius: var(--border-radius-sm);
+  box-shadow: var(--focus-ring);
 }
 
-/* ===== リスト ===== */
+/* ===== 📋 Modern Lists ===== */
 ul, ol {
-  margin: 0 0 var(--space-4) 0;
+  margin: 0 0 var(--space-6) 0;
   padding-left: var(--space-6);
+  max-width: var(--reading-max-width);
 }
 
 ul {
-  list-style-type: disc;
+  list-style: none;
+}
+
+ul li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  line-height: 1.7;
+  color: var(--color-gray-700);
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: var(--space-2);
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  transform: translateY(-50%);
 }
 
 ol {
-  list-style-type: decimal;
+  list-style: none;
+  counter-reset: list-counter;
 }
 
-li {
-  margin-bottom: var(--space-2);
-  line-height: var(--line-height-relaxed);
+ol li {
+  position: relative;
+  padding-left: var(--space-8);
+  margin-bottom: var(--space-3);
+  line-height: 1.7;
+  color: var(--color-gray-700);
+  counter-increment: list-counter;
 }
 
-li:last-child {
-  margin-bottom: 0;
+ol li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--gradient-primary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
 }
 
 /* ネストしたリスト */
-ul ul, 
-ol ol, 
-ul ol, 
-ol ul {
+ul ul, ol ol, ul ol, ol ul {
   margin-top: var(--space-2);
-  margin-bottom: 0;
+  margin-bottom: var(--space-2);
 }
 
-/* ===== 強調・装飾 ===== */
+/* ===== 🎨 Text Formatting ===== */
 strong, b {
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  font-weight: 700;
+  color: var(--color-gray-900);
 }
 
 em, i {
   font-style: italic;
+  color: var(--color-gray-800);
 }
 
 mark {
-  background-color: var(--color-warning-light);
-  color: var(--color-text-primary);
-  padding: 0.125rem 0.25rem;
-  border-radius: var(--border-radius-sm);
+  background: linear-gradient(120deg, transparent 0%, var(--color-primary-100) 0%, var(--color-primary-200) 100%);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary-800);
 }
 
 code {
   font-family: var(--font-family-mono);
-  font-size: 0.875em;
-  background-color: var(--color-gray-100);
-  color: var(--color-primary-700);
-  padding: 0.125rem 0.375rem;
-  border-radius: var(--border-radius-sm);
-  border: 1px solid var(--color-border-light);
+  font-size: 0.9em;
+  background: var(--color-gray-100);
+  color: var(--color-gray-800);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-gray-200);
 }
 
 pre {
   font-family: var(--font-family-mono);
-  font-size: var(--font-size-sm);
-  background-color: var(--color-gray-100);
-  color: var(--color-text-primary);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
   padding: var(--space-4);
-  border-radius: var(--border-radius-md);
-  border: 1px solid var(--color-border-light);
+  margin: var(--space-6) 0;
   overflow-x: auto;
-  margin-bottom: var(--space-4);
+  line-height: 1.5;
 }
 
 pre code {
   background: none;
   border: none;
   padding: 0;
-  color: inherit;
 }
 
-/* ===== 区切り ===== */
+/* ===== 📏 Modern Dividers ===== */
 hr {
   border: none;
   height: 1px;
-  background-color: var(--color-border-default);
+  background: var(--gradient-primary);
   margin: var(--space-8) 0;
+  opacity: 0.3;
+  border-radius: var(--radius-full);
 }
 
-/* ===== 基本フォーム要素 ===== */
-input,
-textarea,
-select {
+/* ===== 📋 Form Elements ===== */
+input, textarea, select {
   font-family: inherit;
   font-size: var(--font-size-base);
-  line-height: var(--line-height-normal);
-  color: var(--color-text-primary);
-  background-color: var(--color-background-primary);
-  border: var(--border-width-1) solid var(--color-border-default);
-  border-radius: var(--border-radius-md);
+  line-height: 1.5;
+  color: var(--color-gray-900);
+  background: white;
+  border: 2px solid var(--color-gray-200);
+  border-radius: var(--radius-lg);
   padding: var(--space-3) var(--space-4);
-  transition: border-color var(--transition-fast), 
-              box-shadow var(--transition-fast);
+  transition: all var(--duration-200) var(--ease-out);
+  width: 100%;
+  max-width: 100%;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+input:focus, textarea:focus, select:focus {
+  outline: none;
   border-color: var(--color-primary-500);
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  box-shadow: var(--focus-ring);
+  transform: translateY(-1px);
 }
 
 textarea {
@@ -280,30 +400,33 @@ textarea {
   min-height: 120px;
 }
 
-/* ===== 画像・メディア ===== */
+/* ===== 🖼️ Media Elements ===== */
 img {
+  max-width: 100%;
   height: auto;
-  border-radius: var(--border-radius-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
 }
 
 figure {
-  margin: var(--space-6) 0;
+  margin: var(--space-8) 0;
 }
 
 figcaption {
   font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+  color: var(--color-gray-600);
   text-align: center;
   margin-top: var(--space-2);
   font-style: italic;
 }
 
-/* ===== テーブル ===== */
+/* ===== 📊 Table Elements ===== */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: var(--space-6);
-  border-radius: var(--border-radius-md);
+  margin: var(--space-6) 0;
+  background: white;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
@@ -311,78 +434,69 @@ table {
 th, td {
   padding: var(--space-3) var(--space-4);
   text-align: left;
-  border-bottom: var(--border-width-1) solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-gray-200);
 }
 
 th {
-  background-color: var(--color-background-muted);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-primary);
+  background: var(--color-gray-50);
+  font-weight: 600;
+  color: var(--color-gray-800);
   font-size: var(--font-size-sm);
   text-transform: uppercase;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.05em;
 }
 
 tr:hover {
-  background-color: var(--color-background-secondary);
+  background: var(--color-gray-50);
 }
 
-/* ===== ユーティリティクラス ===== */
+/* ===== 🎯 Utility Classes ===== */
 
-/* テキスト配置 */
-.text-left {
-  text-align: left;
-}
+/* Text alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
 
-.text-center {
-  text-align: center;
-}
+/* Font weights */
+.font-light { font-weight: 300; }
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
 
-.text-right {
-  text-align: right;
-}
+/* Spacing utilities with better organization */
+.m-0 { margin: 0 !important; }
+.mt-0 { margin-top: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.ml-0 { margin-left: 0 !important; }
+.mr-0 { margin-right: 0 !important; }
 
-.text-justify {
-  text-align: justify;
-}
+.p-0 { padding: 0 !important; }
+.pt-0 { padding-top: 0 !important; }
+.pb-0 { padding-bottom: 0 !important; }
+.pl-0 { padding-left: 0 !important; }
+.pr-0 { padding-right: 0 !important; }
 
-/* フォント重み */
-.font-light {
-  font-weight: var(--font-weight-light);
-}
+/* Spacing scale */
+.mt-2 { margin-top: var(--space-2); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
 
-.font-normal {
-  font-weight: var(--font-weight-normal);
-}
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
 
-.font-medium {
-  font-weight: var(--font-weight-medium);
-}
+.px-4 { padding-left: var(--space-4); padding-right: var(--space-4); }
+.px-6 { padding-left: var(--space-6); padding-right: var(--space-6); }
+.py-4 { padding-top: var(--space-4); padding-bottom: var(--space-4); }
+.py-6 { padding-top: var(--space-6); padding-bottom: var(--space-6); }
 
-.font-semibold {
-  font-weight: var(--font-weight-semibold);
-}
-
-.font-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-/* マージン・パディング */
-.m-0 { margin: 0; }
-.mt-0 { margin-top: 0; }
-.mr-0 { margin-right: 0; }
-.mb-0 { margin-bottom: 0; }
-.ml-0 { margin-left: 0; }
-
-.p-0 { padding: 0; }
-.pt-0 { padding-top: 0; }
-.pr-0 { padding-right: 0; }
-.pb-0 { padding-bottom: 0; }
-.pl-0 { padding-left: 0; }
-
-/* 表示・非表示 */
+/* ===== 🎭 Visibility & Display ===== */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .sr-only {
@@ -397,39 +511,95 @@ tr:hover {
   border: 0;
 }
 
-/* ===== フォーカス管理 ===== */
+/* ===== ♿ Accessibility Enhancements ===== */
 .skip-to-content {
   position: absolute;
   top: -40px;
   left: 6px;
   background: var(--color-primary-600);
-  color: var(--color-text-inverse);
-  padding: 8px 16px;
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
   text-decoration: none;
-  border-radius: var(--border-radius-md);
-  z-index: var(--z-index-tooltip);
-  transition: top var(--transition-fast);
+  font-weight: 600;
+  z-index: var(--z-modal);
+  transition: top var(--duration-200) var(--ease-out);
 }
 
 .skip-to-content:focus {
   top: 6px;
 }
 
-/* ===== レスポンシブ表示制御 ===== */
+/* ===== 📱 Responsive Helpers ===== */
 @media (max-width: 639px) {
   .hidden-mobile {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (min-width: 640px) and (max-width: 767px) {
   .hidden-tablet {
-    display: none;
+    display: none !important;
   }
 }
 
 @media (min-width: 768px) {
   .hidden-desktop {
-    display: none;
+    display: none !important;
   }
+}
+
+/* ===== 🎨 Modern Interactive States ===== */
+.interactive {
+  transition: all var(--duration-200) var(--ease-out);
+  cursor: pointer;
+}
+
+.interactive:hover {
+  transform: var(--hover-lift-sm);
+}
+
+.interactive:active {
+  transform: scale(0.98);
+}
+
+/* ===== 🌟 Glass Effect Helper ===== */
+.glass {
+  background: var(--glass-bg-primary);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+/* ===== 🎪 Animation Classes ===== */
+.animate-in {
+  animation: slideInUp var(--duration-500) var(--ease-out);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-300) var(--ease-out);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ===== 🎯 Focus Management ===== */
+:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
 } 
