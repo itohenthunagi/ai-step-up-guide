@@ -84,12 +84,37 @@
     <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
     
     <!-- ヘッダー -->
-    <header id="site-header" class="site-header" role="banner">
+    <header id="site-header" class="modern-header" role="banner">
         <div class="container">
             <div class="header-content">
-                <h1 class="site-title">
-                    <a href="/index.html" class="site-title-link">生成AIステップアップガイド</a>
-                </h1>
+                <!-- プライベートアクセス表示（控えめに） -->
+                <div class="private-access-badge">
+                    <span class="private-icon">🔒</span>
+                    <span class="private-text">招待制</span>
+                </div>
+                
+                <!-- メインタイトル -->
+                <div class="header-main">
+                    <h1 class="site-title">
+                        <a href="/index.html" class="site-title-link" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: var(--space-3);">
+                            <span class="title-icon">🤖</span>
+                            生成AI ステップアップガイド
+                        </a>
+                    </h1>
+                </div>
+                
+                <!-- ダークモード切り替えボタン -->
+                <div class="header-controls">
+                    <button 
+                        id="theme-toggle" 
+                        class="theme-toggle-btn" 
+                        aria-label="テーマ切り替え"
+                        title="ライト/ダークモード切り替え"
+                    >
+                        <span class="theme-icon light-icon">☀️</span>
+                        <span class="theme-icon dark-icon">🌙</span>
+                    </button>
+                </div>
             </div>
         </div>
     </header>
@@ -99,19 +124,34 @@
         <div class="container">
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="/index.html" class="nav-link">ホーム</a>
+                    <a href="/index.html" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">ホーム</span>
+                    </a>
                 </li>
                 <li class="nav-item nav-item-current">
-                    <a href="/src/pages/ai-basics.html" class="nav-link" aria-current="page">基礎理解</a>
+                    <a href="/src/pages/ai-basics.html" class="nav-link" aria-current="page">
+                        <span class="nav-icon">📚</span>
+                        <span class="nav-text">基礎理解</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/src/pages/improve-resolution.html" class="nav-link">解像度向上</a>
+                    <a href="/src/pages/improve-resolution.html" class="nav-link">
+                        <span class="nav-icon">🔍</span>
+                        <span class="nav-text">解像度向上</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/src/pages/prompt-engineering.html" class="nav-link">プロンプトエンジニアリング</a>
+                    <a href="/src/pages/prompt-engineering.html" class="nav-link">
+                        <span class="nav-icon">⚙️</span>
+                        <span class="nav-text">プロンプトエンジニアリング</span>
+                    </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/src/pages/prompt-creator.html" class="nav-link">プロンプト作成</a>
+                    <a href="/src/pages/prompt-creator.html" class="nav-link">
+                        <span class="nav-icon">✨</span>
+                        <span class="nav-text">プロンプト作成</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -784,5 +824,8 @@
             }
         });
     </script>
+    
+    <!-- 🌙 ダークモード切り替え機能 -->
+    <script src="/src/js/theme-toggle.js"></script>
 </body>
 </html> 

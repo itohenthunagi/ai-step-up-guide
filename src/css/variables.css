@@ -274,4 +274,72 @@
     --glass-bg-secondary: rgba(30, 41, 59, 0.6);
     --glass-border:       rgba(148, 163, 184, 0.2);
   }
+}
+
+/* ===== 🎨 Manual Dark Mode Theme ===== */
+[data-theme="dark"] {
+  /* ダークモード専用カラーパレット */
+  --color-bg-primary:   #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary:  #334155;
+  
+  --color-text-primary:   #f8fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-muted:     #94a3b8;
+  
+  /* ダークモード用グレースケール */
+  --color-gray-50:  #0f172a;
+  --color-gray-100: #1e293b;
+  --color-gray-200: #334155;
+  --color-gray-300: #475569;
+  --color-gray-400: #64748b;
+  --color-gray-500: #94a3b8;
+  --color-gray-600: #cbd5e1;
+  --color-gray-700: #e2e8f0;
+  --color-gray-800: #f1f5f9;
+  --color-gray-900: #f8fafc;
+
+  /* ダークモード用グラス効果 */
+  --glass-bg-primary:   rgba(15, 23, 42, 0.85);
+  --glass-bg-secondary: rgba(30, 41, 59, 0.7);
+  --glass-border:       rgba(148, 163, 184, 0.15);
+  --glass-shadow:       0 8px 32px rgba(0, 0, 0, 0.5);
+
+  /* ダークモード用グラデーション */
+  --gradient-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --gradient-card: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.8) 100%);
+  
+  /* ダークモード用シャドウ */
+  --shadow-dark-sm:  0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-dark-md:  0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-dark-lg:  0 10px 15px rgba(0, 0, 0, 0.5);
+  --shadow-dark-xl:  0 20px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* ライトモード（デフォルト） */
+[data-theme="light"] {
+  --color-bg-primary:   #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-bg-tertiary:  #e2e8f0;
+  
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted:     #64748b;
+  
+  --gradient-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+}
+
+/* デフォルトテーマ（システム設定に従わない場合） */
+:root:not([data-theme]) {
+  --color-bg-primary:   #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-bg-tertiary:  #e2e8f0;
+  
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted:     #64748b;
+  
+  --gradient-bg: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
 } 
