@@ -1,0 +1,33 @@
+# robots.txt - 検索エンジンアクセス完全拒否
+# URLを知っている人のみのプライベートアクセス用設定
+
+User-agent: *
+Disallow: /
+
+# 全ての検索エンジンボットをブロック
+User-agent: Googlebot
+Disallow: /
+
+User-agent: Bingbot
+Disallow: /
+
+User-agent: Slurp
+Disallow: /
+
+User-agent: DuckDuckBot
+Disallow: /
+
+User-agent: Baiduspider
+Disallow: /
+
+User-agent: YandexBot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+# サイトマップなし（検索エンジンに情報を提供しない）
+# Sitemap: (削除) 
