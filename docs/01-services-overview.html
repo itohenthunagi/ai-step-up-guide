@@ -12,6 +12,103 @@
     <title>主要サービス一覧（2025年6月現在） - 生成AIステップアップガイド</title>
     <meta name="description" content="ChatGPT、Perplexity AI、NotebookLMなど主要な生成AIサービスの特徴、料金、活用方法を詳しく解説">
     <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* ページ固有のスタイル修正 */
+        .service-card {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .service-card h4,
+        .service-card h5,
+        .service-card h6,
+        .service-card p,
+        .service-card li {
+            color: inherit !important;
+        }
+        
+        .service-card ul li {
+            color: #4b5563 !important;
+        }
+        
+        .positioning p {
+            color: #047857 !important;
+        }
+        
+        .features li {
+            color: #374151 !important;
+        }
+        
+        /* 価格プランの色修正 */
+        .free-plan h6 {
+            color: #374151 !important;
+        }
+        
+        .free-plan p {
+            color: #6b7280 !important;
+        }
+        
+        .paid-plan h6 {
+            color: #92400e !important;
+        }
+        
+        .paid-plan p {
+            color: #a16207 !important;
+        }
+        
+        /* Perplexity AI用の色調整 */
+        .service-card:nth-child(2) .positioning p {
+            color: #1e40af !important;
+        }
+        
+        .service-card:nth-child(2) .paid-plan h6 {
+            color: #1d4ed8 !important;
+        }
+        
+        .service-card:nth-child(2) .paid-plan p {
+            color: #1e3a8a !important;
+        }
+        
+        /* NotebookLM用の色調整 */
+        .service-card:nth-child(3) .positioning p {
+            color: #dc2626 !important;
+        }
+        
+        .service-card:nth-child(3) .paid-plan h6 {
+            color: #dc2626 !important;
+        }
+        
+        .service-card:nth-child(3) .paid-plan p {
+            color: #b91c1c !important;
+        }
+        
+        /* 選び方ガイドの色修正 */
+        .selection-guide div h4 {
+            font-weight: 600 !important;
+        }
+        
+        .selection-guide div ul {
+            color: #4b5563 !important;
+        }
+        
+        /* ダークモード対応 */
+        @media (prefers-color-scheme: dark) {
+            .service-card {
+                background: #f9fafb !important;
+                color: #1f2937 !important;
+            }
+            
+            .selection-guide {
+                background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+            }
+            
+            .selection-guide div {
+                background: white !important;
+                color: #1f2937 !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- スキップリンク -->
@@ -74,7 +171,7 @@
                 <h3 style="font-size: 1.8rem; margin-bottom: 30px; color: #333;">📊 主要サービス比較表</h3>
                 
                 <!-- ChatGPT -->
-                <div class="service-card" style="background: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #10a37f;">
+                <div class="service-card" style="background: #ffffff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #10a37f;">
                     <div class="service-header" style="display: flex; align-items: center; margin-bottom: 20px;">
                         <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #10a37f, #1a7f64); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 20px;">
                             🤖
@@ -88,17 +185,17 @@
                     <div class="service-details">
                         <div class="positioning" style="background: #f0fdf4; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
                             <h5 style="color: #15803d; margin: 0 0 8px 0; font-weight: 600;">🎯 位置づけ</h5>
-                            <p style="margin: 0; color: #166534;"><strong>万能な執事</strong>（日常から専門的な相談まで対応）</p>
+                            <p style="margin: 0; color: #047857; font-weight: 600;"><strong>万能な執事</strong>（日常から専門的な相談まで対応）</p>
                         </div>
                         
                         <div class="features" style="margin-bottom: 20px;">
-                            <h5 style="color: #333; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
+                            <h5 style="color: #1f2937; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">🧠 <strong>GPT-4.5（Orion）</strong>で高度な推論と創造性</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">📱 <strong>マルチモーダル対応</strong>：テキスト・画像・音声・ファイル解析</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">🔍 <strong>Deep Research</strong>：出典付きで調査代行</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">⚙️ <strong>カスタムGPT</strong>でオリジナルAI作成</li>
-                                <li style="padding: 8px 0;">💭 <strong>会話記憶機能</strong>（メモリ）あり</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🧠 <strong>GPT-4.5（Orion）</strong>で高度な推論と創造性</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📱 <strong>マルチモーダル対応</strong>：テキスト・画像・音声・ファイル解析</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🔍 <strong>Deep Research</strong>：出典付きで調査代行</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">⚙️ <strong>カスタムGPT</strong>でオリジナルAI作成</li>
+                                <li style="padding: 8px 0; color: #374151;">💭 <strong>会話記憶機能</strong>（メモリ）あり</li>
                             </ul>
                         </div>
                         
@@ -116,7 +213,7 @@
                 </div>
 
                 <!-- Perplexity AI -->
-                <div class="service-card" style="background: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #1e40af;">
+                <div class="service-card" style="background: #ffffff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #1e40af;">
                     <div class="service-header" style="display: flex; align-items: center; margin-bottom: 20px;">
                         <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e40af, #1e3a8a); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 20px;">
                             🔍
@@ -130,17 +227,17 @@
                     <div class="service-details">
                         <div class="positioning" style="background: #eff6ff; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
                             <h5 style="color: #1d4ed8; margin: 0 0 8px 0; font-weight: 600;">🎯 位置づけ</h5>
-                            <p style="margin: 0; color: #1e3a8a;"><strong>情報収集の達人</strong>（リアルタイム検索と分析に特化）</p>
+                            <p style="margin: 0; color: #1e40af; font-weight: 600;"><strong>情報収集の達人</strong>（リアルタイム検索と分析に特化）</p>
                         </div>
                         
                         <div class="features" style="margin-bottom: 20px;">
-                            <h5 style="color: #333; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
+                            <h5 style="color: #1f2937; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">🌐 <strong>リアルタイムWeb検索</strong>と出典付き回答</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">🤖 <strong>GPT-4.1/Claude 4/Gemini Pro</strong>選択可</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">📄 <strong>ファイル解析対応</strong>（PDF, CSV, 画像など）</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">🧪 <strong>Labs機能</strong>でグラフや表も生成</li>
-                                <li style="padding: 8px 0;">📱 <strong>スマホ連携アシスタント</strong>機能あり</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🌐 <strong>リアルタイムWeb検索</strong>と出典付き回答</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🤖 <strong>GPT-4.1/Claude 4/Gemini Pro</strong>選択可</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📄 <strong>ファイル解析対応</strong>（PDF, CSV, 画像など）</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🧪 <strong>Labs機能</strong>でグラフや表も生成</li>
+                                <li style="padding: 8px 0; color: #374151;">📱 <strong>スマホ連携アシスタント</strong>機能あり</li>
                             </ul>
                         </div>
                         
@@ -158,7 +255,7 @@
                 </div>
 
                 <!-- NotebookLM -->
-                <div class="service-card" style="background: white; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #dc2626;">
+                <div class="service-card" style="background: #ffffff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #dc2626;">
                     <div class="service-header" style="display: flex; align-items: center; margin-bottom: 20px;">
                         <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626, #b91c1c); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 20px;">
                             📚
@@ -172,17 +269,17 @@
                     <div class="service-details">
                         <div class="positioning" style="background: #fef2f2; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
                             <h5 style="color: #dc2626; margin: 0 0 8px 0; font-weight: 600;">🎯 位置づけ</h5>
-                            <p style="margin: 0; color: #b91c1c;"><strong>知識の図書館司書</strong>（個人の資料を整理・要約）</p>
+                            <p style="margin: 0; color: #dc2626; font-weight: 600;"><strong>知識の図書館司書</strong>（個人の資料を整理・要約）</p>
                         </div>
                         
                         <div class="features" style="margin-bottom: 20px;">
-                            <h5 style="color: #333; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
+                            <h5 style="color: #1f2937; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">📁 <strong>資料50件/50万語まで統合管理</strong></li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">🎧 <strong>Audio Overview</strong>で音声要約</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">🔍 <strong>Discover Sources</strong>で外部情報も参照</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee;">📖 <strong>文書横断検索と引用明示</strong></li>
-                                <li style="padding: 8px 0;">🌐 <strong>多言語・マルチデバイス対応</strong></li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📁 <strong>資料50件/50万語まで統合管理</strong></li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🎧 <strong>Audio Overview</strong>で音声要約</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🔍 <strong>Discover Sources</strong>で外部情報も参照</li>
+                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📖 <strong>文書横断検索と引用明示</strong></li>
+                                <li style="padding: 8px 0; color: #374151;">🌐 <strong>多言語・マルチデバイス対応</strong></li>
                             </ul>
                         </div>
                         
@@ -202,12 +299,12 @@
 
             <!-- 選び方ガイド -->
             <div class="selection-guide" style="background: linear-gradient(135deg, #f8fafc, #e2e8f0); padding: 30px; border-radius: 12px; margin-top: 40px;">
-                <h3 style="font-size: 1.8rem; color: #334155; margin-bottom: 20px; text-align: center;">🎯 どのサービスを選ぶべき？</h3>
+                <h3 style="font-size: 1.8rem; color: #1f2937; margin-bottom: 20px; text-align: center;">🎯 どのサービスを選ぶべき？</h3>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
                     <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                        <h4 style="color: #10a37f; margin: 0 0 10px 0;">🤖 ChatGPTがおすすめな人</h4>
-                        <ul style="color: #64748b; margin: 0; padding-left: 20px;">
+                        <h4 style="color: #10a37f; margin: 0 0 10px 0; font-weight: 600;">🤖 ChatGPTがおすすめな人</h4>
+                        <ul style="color: #4b5563; margin: 0; padding-left: 20px;">
                             <li>多様なタスクに対応したい</li>
                             <li>カスタムGPTを作りたい</li>
                             <li>創作活動に活用したい</li>
@@ -215,8 +312,8 @@
                     </div>
                     
                     <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                        <h4 style="color: #1e40af; margin: 0 0 10px 0;">🔍 Perplexity AIがおすすめな人</h4>
-                        <ul style="color: #64748b; margin: 0; padding-left: 20px;">
+                        <h4 style="color: #1e40af; margin: 0 0 10px 0; font-weight: 600;">🔍 Perplexity AIがおすすめな人</h4>
+                        <ul style="color: #4b5563; margin: 0; padding-left: 20px;">
                             <li>最新情報の調査が重要</li>
                             <li>出典付きの信頼性が欲しい</li>
                             <li>ビジネス・学術用途</li>
@@ -224,8 +321,8 @@
                     </div>
                     
                     <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-                        <h4 style="color: #dc2626; margin: 0 0 10px 0;">📚 NotebookLMがおすすめな人</h4>
-                        <ul style="color: #64748b; margin: 0; padding-left: 20px;">
+                        <h4 style="color: #dc2626; margin: 0 0 10px 0; font-weight: 600;">📚 NotebookLMがおすすめな人</h4>
+                        <ul style="color: #4b5563; margin: 0; padding-left: 20px;">
                             <li>個人の資料を整理したい</li>
                             <li>研究・学習用途</li>
                             <li>音声要約を活用したい</li>
