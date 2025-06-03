@@ -17,6 +17,11 @@
     <!-- スキップリンク（アクセシビリティ向上） -->
     <a href="#main-content" class="skip-to-content">メインコンテンツにスキップ</a>
     
+    <!-- 🔒 プライベートアクセス表示 -->
+    <div class="private-access-banner" style="background: linear-gradient(135deg, #FF6B35, #FF8E53); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 600;">
+        🔐 招待制プライベートアクセス - このサイトは知人限定公開です
+    </div>
+    
     <header class="modern-header">
         <div class="container">
             <div class="header-content">
@@ -45,19 +50,27 @@
             <!-- ナビゲーション -->
             <nav role="navigation" aria-label="メインナビゲーション" class="main-nav">
                 <ul>
-                    <li><a href="#basic" aria-describedby="basic-desc">
-                        <span class="nav-icon">📚</span>
-                        <span class="nav-text">基礎理解</span>
+                    <li><a href="#services" aria-describedby="services-desc">
+                        <span class="nav-icon">🌐</span>
+                        <span class="nav-text">主要サービス一覧</span>
                     </a></li>
-                    <li><a href="#resolution" aria-describedby="resolution-desc">
-                        <span class="nav-icon">🔍</span>
-                        <span class="nav-text">解像度向上</span>
+                    <li><a href="#prompt-design" aria-describedby="design-desc">
+                        <span class="nav-icon">🎨</span>
+                        <span class="nav-text">プロンプト設計</span>
                     </a></li>
-                    <li><a href="#prompt-engineering" aria-describedby="prompt-desc">
+                    <li><a href="#use-cases" aria-describedby="cases-desc">
+                        <span class="nav-icon">💡</span>
+                        <span class="nav-text">ユースケース</span>
+                    </a></li>
+                    <li><a href="#advanced" aria-describedby="advanced-desc">
                         <span class="nav-icon">⚙️</span>
-                        <span class="nav-text">プロンプトエンジニアリング</span>
+                        <span class="nav-text">便利機能</span>
                     </a></li>
-                    <li><a href="#prompt-creation" aria-describedby="creation-desc">
+                    <li><a href="#safety" aria-describedby="safety-desc">
+                        <span class="nav-icon">🛡️</span>
+                        <span class="nav-text">制限と安全対策</span>
+                    </a></li>
+                    <li><a href="#creation" aria-describedby="creation-desc">
                         <span class="nav-icon">✨</span>
                         <span class="nav-text">プロンプト作成</span>
                     </a></li>
@@ -96,64 +109,100 @@
                 </div>
             </section>
 
-            <!-- メインコンテンツセクション -->
-            <section id="basic" class="content-section" aria-labelledby="basic-title">
-                <h2 id="basic-title">生成AIの基礎理解</h2>
-                <p id="basic-desc">生成AIの基本的な概念、種類、歴史、できることについて学びます。AI技術の背景知識から、現在主流となっている生成AIモデルの特徴まで、初心者にもわかりやすく解説します。</p>
+            <!-- メインコンテンツセクション（Phase 8の6項目構成） -->
+            <section id="services" class="content-section" aria-labelledby="services-title">
+                <h2 id="services-title">1. 主要サービス一覧（2025年6月現在）</h2>
+                <p id="services-desc">現在利用可能な主要な生成AIサービスの特徴、料金、活用方法について詳しく解説します。ChatGPT、Claude、Gemini、その他の専門的AIツールまで幅広くカバーしています。</p>
                 
                 <div class="content-highlights">
-                    <h3>学習内容</h3>
+                    <h3>主要サービス</h3>
                     <ul>
-                        <li><strong>生成AIとは何か</strong> - 基本的な仕組みと概念</li>
-                        <li><strong>主要なAIサービス</strong> - ChatGPT、Claude、Geminiなど</li>
-                        <li><strong>AI技術の歴史</strong> - 発展の経緯と現在の位置づけ</li>
-                        <li><strong>活用可能な分野</strong> - テキスト、画像、音声、動画生成</li>
+                        <li><strong>ChatGPT</strong> - OpenAI開発、最も普及している対話型AI</li>
+                        <li><strong>Claude</strong> - Anthropic開発、安全性重視の高性能AI</li>
+                        <li><strong>Gemini</strong> - Google開発、検索連携が強みのAI</li>
+                        <li><strong>専門特化AI</strong> - 画像生成、コード生成、音声合成など</li>
                     </ul>
+                    <a href="docs/01-services-overview.md" class="content-link">詳細を確認 →</a>
                 </div>
             </section>
 
-            <section id="resolution" class="content-section" aria-labelledby="resolution-title">
-                <h2 id="resolution-title">解像度を上げる</h2>
-                <p id="resolution-desc">生成AIでより高品質なアウトプットを得るための考え方やテクニックについて学びます。「解像度を上げる」とは、より具体的で詳細な指示や文脈を提供することで、期待に近い結果を得る手法です。</p>
+            <section id="prompt-design" class="content-section" aria-labelledby="design-title">
+                <h2 id="design-title">2. 効果的なプロンプト設計</h2>
+                <p id="design-desc">高品質なアウトプットを得るためのプロンプト設計原則と実践的テクニックを学びます。構造化プロンプト、役割設定、文脈提供など、様々な手法を体系的に解説します。</p>
                 
                 <div class="content-highlights">
-                    <h3>向上ポイント</h3>
+                    <h3>設計原則</h3>
                     <ul>
-                        <li><strong>具体性の重要性</strong> - 曖昧な指示から具体的な指示へ</li>
-                        <li><strong>文脈の提供</strong> - 背景情報と目的の明確化</li>
-                        <li><strong>段階的改善</strong> - 結果を見ながらの継続的な調整</li>
-                        <li><strong>例示の活用</strong> - 期待する形式や内容の例示方法</li>
+                        <li><strong>明確性</strong> - 曖昧さを排除した具体的な指示</li>
+                        <li><strong>構造化</strong> - 論理的で理解しやすい構成</li>
+                        <li><strong>文脈提供</strong> - 必要な背景情報の適切な組み込み</li>
+                        <li><strong>出力制御</strong> - 形式・長さ・トーンの明確な指定</li>
                     </ul>
+                    <a href="docs/02-prompt-design.md" class="content-link">詳細を確認 →</a>
                 </div>
             </section>
 
-            <section id="prompt-engineering" class="content-section" aria-labelledby="prompt-title">
-                <h2 id="prompt-title">プロンプトエンジニアリングについて理解する</h2>
-                <p id="prompt-desc">効果的なプロンプトを作成するための原則やテクニック、様々なパターンのプロンプト例について学びます。プロンプトエンジニアリングは、AIとのコミュニケーションを最適化するための重要なスキルです。</p>
+            <section id="use-cases" class="content-section" aria-labelledby="cases-title">
+                <h2 id="cases-title">3. よくあるユースケース＆サンプル</h2>
+                <p id="cases-desc">ビジネス、学習、創作活動など、様々な場面での具体的な活用例とサンプルプロンプトを紹介します。すぐに使える実践的なテンプレート集も含まれています。</p>
                 
                 <div class="content-highlights">
-                    <h3>主要テクニック</h3>
+                    <h3>活用分野</h3>
                     <ul>
-                        <li><strong>役割の設定</strong> - AIに専門性を持たせる方法</li>
-                        <li><strong>ステップ分解</strong> - 複雑なタスクを段階的に実行</li>
-                        <li><strong>出力形式の指定</strong> - 表、リスト、JSONなど形式の制御</li>
-                        <li><strong>Few-shot学習</strong> - 例を示しての学習促進</li>
+                        <li><strong>ビジネス活用</strong> - 資料作成、メール文案、企画書作成</li>
+                        <li><strong>学習支援</strong> - 要約、解説、問題作成</li>
+                        <li><strong>創作活動</strong> - 小説、ブログ、アイデア発想</li>
+                        <li><strong>日常業務</strong> - スケジュール管理、情報整理</li>
                     </ul>
+                    <a href="docs/03-use-cases.md" class="content-link">詳細を確認 →</a>
                 </div>
             </section>
 
-            <section id="prompt-creation" class="content-section" aria-labelledby="creation-title">
-                <h2 id="creation-title">プロンプトを作成する</h2>
-                <p id="creation-desc">実際にプロンプトを作成する演習や、便利なツール、テンプレートなどを紹介します。理論から実践へ移行し、具体的なシーンでのプロンプト作成スキルを身につけます。</p>
+            <section id="advanced" class="content-section" aria-labelledby="advanced-title">
+                <h2 id="advanced-title">4. 便利機能・拡張</h2>
+                <p id="advanced-desc">APIの活用、プラグイン、ブラウザ拡張機能など、生成AIをより効率的に活用するための高度な機能と拡張ツールについて解説します。</p>
                 
                 <div class="content-highlights">
-                    <h3>実践要素</h3>
+                    <h3>高度な活用法</h3>
                     <ul>
-                        <li><strong>テンプレート集</strong> - 目的別プロンプトテンプレート</li>
-                        <li><strong>作成演習</strong> - 段階的なプロンプト構築練習</li>
-                        <li><strong>改善サイクル</strong> - 結果評価と継続改善の方法</li>
-                        <li><strong>実用例</strong> - ビジネス・学習・創作での活用例</li>
+                        <li><strong>API連携</strong> - プログラムからの自動化活用</li>
+                        <li><strong>ブラウザ拡張</strong> - Webページでの直接利用</li>
+                        <li><strong>プラグイン</strong> - ChatGPT Plugins、Code Interpreterなど</li>
+                        <li><strong>ワークフロー構築</strong> - 複数ツールの連携活用</li>
                     </ul>
+                    <a href="docs/04-advanced-features.md" class="content-link">詳細を確認 →</a>
+                </div>
+            </section>
+
+            <section id="safety" class="content-section" aria-labelledby="safety-title">
+                <h2 id="safety-title">5. 制限と安全対策</h2>
+                <p id="safety-desc">生成AIの技術的制限、倫理的配慮、セキュリティリスク、プライバシー保護など、安全で責任ある活用のための重要な注意点を詳しく説明します。</p>
+                
+                <div class="content-highlights">
+                    <h3>重要な注意点</h3>
+                    <ul>
+                        <li><strong>技術的制限</strong> - ハルシネーション、知識カットオフなど</li>
+                        <li><strong>プライバシー</strong> - 個人情報・機密情報の取り扱い</li>
+                        <li><strong>著作権・法的配慮</strong> - 生成コンテンツの権利関係</li>
+                        <li><strong>バイアス対策</strong> - 公平性と多様性の確保</li>
+                    </ul>
+                    <a href="docs/05-limitations-safety.md" class="content-link">詳細を確認 →</a>
+                </div>
+            </section>
+
+            <section id="creation" class="content-section" aria-labelledby="creation-title">
+                <h2 id="creation-title">6. プロンプトを作成する</h2>
+                <p id="creation-desc">実際にプロンプトを作成するための5ステップ手法、テンプレート集、チェックリスト、改善方法などを紹介します。理論から実践への橋渡しとなる重要なセクションです。</p>
+                
+                <div class="content-highlights">
+                    <h3>実践的スキル</h3>
+                    <ul>
+                        <li><strong>5ステップ手法</strong> - 体系的なプロンプト作成プロセス</li>
+                        <li><strong>テンプレート集</strong> - ビジネス・創作・学習用テンプレート</li>
+                        <li><strong>チェックリスト</strong> - 品質確保のための確認項目</li>
+                        <li><strong>改善サイクル</strong> - 継続的な品質向上手法</li>
+                    </ul>
+                    <a href="docs/06-prompt-creation.md" class="content-link">詳細を確認 →</a>
                 </div>
             </section>
         </div>
@@ -161,9 +210,9 @@
 
     <footer role="contentinfo">
         <div class="container">
-            <p>&copy; 2025 生成AIステップアップガイド</p>
+            <p>&copy; 2025 生成AIステップアップガイド - Phase 8完了版</p>
             <p class="text-small text-muted">
-                初心者から中級者まで、段階的にAIリテラシーを向上させるための学習ガイド
+                6項目構成による体系的なAIリテラシー向上ガイド（プライベートアクセス）
             </p>
         </div>
     </footer>
