@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 プライベートアクセス設定：検索エンジン完全ブロック -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+    
+    <title>制限と安全対策 - 生成AIステップアップガイド</title>
+    <meta name="description" content="生成AI利用時の制限事項や注意点、セキュリティ対策を比喩で分かりやすく解説">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* 確実なダークモード対応 */
+        .force-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .force-dark {
+            background: #1f2937 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* コンテンツカード用スタイル */
+        .content-card-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .content-card-dark {
+            background: #374151 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* テキスト色の強制指定 */
+        .text-dark-force {
+            color: #1f2937 !important;
+        }
+        
+        .text-light-force {
+            color: #f9fafb !important;
+        }
+        
+        /* 制限・安全対策カード */
+        .safety-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .safety-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* 制限アイコン */
+        .limitation-icon {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+        
+        .input-limit-icon {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+        
+        .security-icon {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+        }
+        
+        .accuracy-icon {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: white;
+        }
+        
+        .compliance-icon {
+            background: linear-gradient(135deg, #059669, #047857);
+            color: white;
+        }
+        
+        /* 警告ボックス */
+        .warning-box {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            border-left: 4px solid #ef4444;
+            padding: 16px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        
+        /* 比喩ボックス */
+        .metaphor-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        /* ヒントボックス */
+        .tip-box {
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border-left: 4px solid #22c55e;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-to-content">メインコンテンツにスキップ</a>
+    
+    <!-- 🔒 プライベートアクセス表示 -->
+    <div class="private-access-banner" style="background: linear-gradient(135deg, #FF6B35, #FF8E53); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 600;">
+        🔐 招待制プライベートアクセス - このサイトは知人限定公開です
+    </div>
+    
+    <header class="modern-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1 class="site-title">
+                        <a href="../index.html" style="color: inherit; text-decoration: none;">
+                            <span class="title-icon">🤖</span>
+                            生成AI ステップアップガイド
+                        </a>
+                    </h1>
+                </div>
+                
+                <div class="header-controls">
+                    <button 
+                        id="theme-toggle" 
+                        class="theme-toggle-btn" 
+                        aria-label="テーマ切り替え"
+                        title="ライト/ダークモード切り替え"
+                    >
+                        <span class="theme-icon light-icon">☀️</span>
+                        <span class="theme-icon dark-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- パンくずナビゲーション -->
+            <nav aria-label="パンくずナビゲーション" class="breadcrumb-nav" style="padding: 10px 0; font-size: 14px;">
+                <a href="../index.html" style="color: #FF6B35; text-decoration: none;">🏠 ホーム</a>
+                <span style="margin: 0 8px; color: #666;">›</span>
+                <span style="color: #333;">5. 制限と安全対策</span>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            
+            <!-- ページタイトル -->
+            <div class="page-title-section" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #FF6B35; margin-bottom: 15px;">
+                    🔒 制限と安全対策
+                </h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    安全で効果的にAIを活用するための制限事項と注意点を、比喻で分かりやすく解説します
+                </p>
+            </div>
+
+            <!-- 重要な警告 -->
+            <div class="warning-box" style="margin-bottom: 30px;">
+                <h3 style="color: #ef4444; margin: 0 0 10px 0; font-weight: 600; font-size: 1.1rem;">
+                    ⚠️ 重要な注意事項
+                </h3>
+                <p style="margin: 0; font-weight: 500;">
+                    AIは強力なツールですが、完璧ではありません。適切な理解と注意深い使用が重要です。安全なAI活用のために、以下の制限と対策を必ず確認してください。
+                </p>
+            </div>
+
+            <!-- 1. 入力上限 -->
+            <div class="safety-card">
+                <h3 class="text-dark-force" style="font-size: 1.5rem; margin-bottom: 15px; color: #f59e0b;">
+                    <span class="limitation-icon input-limit-icon">📏</span>
+                    1. 入力上限
+                </h3>
+                
+                <p class="text-dark-force" style="margin-bottom: 15px; font-size: 1rem;">
+                    無料版ChatGPTは<strong>16,000文字（短編小説程度）</strong>、有料版（GPT-4o）は<strong>128,000トークン（長編小説ほど）</strong>まで対応しています。
+                </p>
+                
+                <div class="metaphor-box">
+                    📖 <strong>比喩で理解</strong><br>
+                    これは図書館の貸出制限のようなもの。一度に借りられる本の冊数に上限があるように、AIも一度に処理できる情報量に制限があります。
+                </div>
+                
+                <div class="tip-box">
+                    💡 <strong>対策のヒント</strong><br>
+                    長い文書は分割して送る、重要な部分を先に送る、要約してから詳細を質問するなどの工夫で効率的に活用できます。
+                </div>
+            </div>
+
+            <!-- 2. 機密情報の取り扱い -->
+            <div class="safety-card">
+                <h3 class="text-dark-force" style="font-size: 1.5rem; margin-bottom: 15px; color: #ef4444;">
+                    <span class="limitation-icon security-icon">🔐</span>
+                    2. 機密情報の取り扱い
+                </h3>
+                
+                <p class="text-dark-force" style="margin-bottom: 15px; font-size: 1rem;">
+                    企業の機密情報や個人情報をAIに伝えることは、セキュリティリスクを伴います。
+                </p>
+                
+                <div class="metaphor-box">
+                    🔑 <strong>比喩で理解</strong><br>
+                    これは知らない人に<strong>家の鍵を渡す</strong>ようなもの。信頼できない相手に重要な情報を託すのは危険です。
+                </div>
+                
+                <div class="tip-box">
+                    💡 <strong>安全な対策</strong><br>
+                    • 情報を隠す（マスキング）：「A社」「山田さん」などの仮名を使用<br>
+                    • 専用環境の利用：オンプレミス版や企業向けサービスの活用<br>
+                    • 事前確認：会社の情報セキュリティ方針を必ず確認
+                </div>
+            </div>
+
+            <!-- 3. 誤情報のチェック -->
+            <div class="safety-card">
+                <h3 class="text-dark-force" style="font-size: 1.5rem; margin-bottom: 15px; color: #8b5cf6;">
+                    <span class="limitation-icon accuracy-icon">🔍</span>
+                    3. 誤情報のチェック
+                </h3>
+                
+                <p class="text-dark-force" style="margin-bottom: 15px; font-size: 1rem;">
+                    AIの出した情報は完璧ではなく、時として事実でない情報（幻覚）を生成することがあります。
+                </p>
+                
+                <div class="metaphor-box">
+                    🍽️ <strong>比喩で理解</strong><br>
+                    これは<strong>料理の味見</strong>をするようなもの。どんなに優秀なシェフでも、完成前の味見は欠かせません。
+                </div>
+                
+                <div class="tip-box">
+                    💡 <strong>検証方法</strong><br>
+                    • 出典の確認：Perplexityの引用機能を活用<br>
+                    • 複数ソースでの確認：異なる情報源で事実確認<br>
+                    • 専門家への相談：重要な判断は必ず専門家に確認<br>
+                    • 最新情報の確認：データの更新日時をチェック
+                </div>
+            </div>
+
+            <!-- 4. 利用規約遵守 -->
+            <div class="safety-card">
+                <h3 class="text-dark-force" style="font-size: 1.5rem; margin-bottom: 15px; color: #059669;">
+                    <span class="limitation-icon compliance-icon">⚖️</span>
+                    4. 利用規約遵守
+                </h3>
+                
+                <p class="text-dark-force" style="margin-bottom: 15px; font-size: 1rem;">
+                    著作権や個人情報保護法に反する入力・出力は厳禁です。法的な責任を避けるため、適切な使用を心がけましょう。
+                </p>
+                
+                <div class="metaphor-box">
+                    🚦 <strong>比喩で理解</strong><br>
+                    これは<strong>交通ルールを守る</strong>ことと同じ。信号を無視したり速度違反をしたりすると事故の原因になります。
+                </div>
+                
+                <div class="tip-box">
+                    💡 <strong>遵守すべきルール</strong><br>
+                    • 著作権：他人の作品をそのまま複製・使用しない<br>
+                    • 個人情報：他人の個人情報を無断で入力しない<br>
+                    • 利用規約：各サービスの利用規約を定期的に確認<br>
+                    • 倫理的使用：違法・有害なコンテンツ生成を行わない
+                </div>
+            </div>
+
+            <!-- 安全なAI活用のためのベストプラクティス -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #22c55e;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #22c55e;">
+                    ✅ 安全なAI活用のためのベストプラクティス
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 3px solid #0ea5e9;">
+                        <h4 class="text-dark-force" style="color: #0c4a6e; margin: 0 0 10px 0;">🧠 批判的思考</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            AIの回答を鵜呑みにせず、常に「本当にそうか？」と疑問を持ち、他の情報源と照らし合わせる習慣を身につけましょう。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                        <h4 class="text-dark-force" style="color: #92400e; margin: 0 0 10px 0;">📚 継続学習</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            AI技術は急速に発展しています。最新の機能や制限について定期的に情報収集し、知識をアップデートしましょう。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; border-left: 3px solid #22c55e;">
+                        <h4 class="text-dark-force" style="color: #15803d; margin: 0 0 10px 0;">🛡️ セキュリティ意識</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            機密情報の扱いには細心の注意を払い、必要に応じて専用のセキュアな環境でAIを利用することを検討しましょう。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #fdf2f8; padding: 20px; border-radius: 8px; border-left: 3px solid #ec4899;">
+                        <h4 class="text-dark-force" style="color: #be185d; margin: 0 0 10px 0;">⚖️ 倫理的配慮</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            AIの力を正しい目的のために使用し、社会に害を与えるような使い方は避け、倫理的な判断を常に心がけましょう。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ナビゲーション -->
+            <div class="page-navigation" style="margin-top: 50px; text-align: center;">
+                <a href="04-advanced-features.html" class="content-link" style="margin-right: 20px;">← 前へ：便利機能・拡張</a>
+                <a href="../index.html" class="content-link" style="margin: 0 20px;">🏠 ホームに戻る</a>
+                <a href="06-prompt-creation.html" class="content-link">次へ：プロンプトを作成する →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo" style="background: #1f2937; color: white; padding: 30px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 生成AIステップアップガイド - Phase 8完了版</p>
+            <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 5px;">
+                6項目構成による体系的なAIリテラシー向上ガイド（プライベートアクセス）
+            </p>
+        </div>
+    </footer>
+
+    <!-- ダークモード対応JavaScript -->
+    <script>
+        // ダークモード検出と動的スタイル適用
+        function applyThemeStyles() {
+            const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // 全ての要素を取得
+            const contentCards = document.querySelectorAll('.content-card');
+            const textElements = document.querySelectorAll('.text-dark-force');
+            const safetyCards = document.querySelectorAll('.safety-card');
+            
+            if (isDarkMode) {
+                console.log('ダークモード検出 - 制限と安全対策ページスタイル適用中');
+                
+                // コンテンツカードをダークテーマに
+                contentCards.forEach(card => {
+                    card.className = card.className.replace('content-card-light', 'content-card-dark');
+                    card.style.background = '#374151';
+                    card.style.color = '#f9fafb';
+                });
+                
+                // テキスト要素をライトテーマに
+                textElements.forEach(element => {
+                    element.style.color = '#f9fafb';
+                });
+                
+                // 安全対策カードをダークテーマに
+                safetyCards.forEach(card => {
+                    card.style.background = '#4b5563';
+                    card.style.borderColor = '#6b7280';
+                    card.style.color = '#f9fafb';
+                });
+                
+            } else {
+                console.log('ライトモード検出 - デフォルトスタイル適用');
+                
+                // ライトモードの場合はデフォルトスタイルを確実に適用
+                contentCards.forEach(card => {
+                    card.style.background = '#ffffff';
+                    card.style.color = '#1f2937';
+                });
+                
+                textElements.forEach(element => {
+                    element.style.color = '#1f2937';
+                });
+            }
+        }
+        
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', applyThemeStyles);
+        
+        // システムテーマ変更を監視
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(applyThemeStyles);
+        }
+        
+        // 手動テーマ切り替えボタンがある場合の対応
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                setTimeout(applyThemeStyles, 100);
+            });
+        }
+    </script>
+    
+    <!-- 既存のテーマ切り替え機能 -->
+    <script src="../src/js/theme-toggle.js"></script>
+</body>
+</html> 

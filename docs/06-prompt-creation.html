@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 プライベートアクセス設定：検索エンジン完全ブロック -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+    
+    <title>プロンプトを作成する - 生成AIステップアップガイド</title>
+    <meta name="description" content="効果的なプロンプト作成の5ステップ、実践テンプレート集、チェックリストで実用的なAI活用スキルを習得">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* 確実なダークモード対応 */
+        .force-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .force-dark {
+            background: #1f2937 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* コンテンツカード用スタイル */
+        .content-card-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .content-card-dark {
+            background: #374151 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* テキスト色の強制指定 */
+        .text-dark-force {
+            color: #1f2937 !important;
+        }
+        
+        .text-light-force {
+            color: #f9fafb !important;
+        }
+        
+        /* ステップカード */
+        .step-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* ステップ番号 */
+        .step-number {
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: linear-gradient(135deg, #FF6B35, #FF8E53);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        /* テンプレートボックス */
+        .template-box {
+            background: #1f2937;
+            color: #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: auto;
+        }
+        
+        .template-box::before {
+            content: "Template";
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            background: #FF6B35;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        
+        /* テーブルスタイル */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        
+        .styled-table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        /* チェックリスト */
+        .checklist {
+            background: #f0fdf4;
+            border: 1px solid #22c55e;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .checklist-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .checklist-icon {
+            color: #22c55e;
+            margin-right: 8px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-to-content">メインコンテンツにスキップ</a>
+    
+    <!-- 🔒 プライベートアクセス表示 -->
+    <div class="private-access-banner" style="background: linear-gradient(135deg, #FF6B35, #FF8E53); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 600;">
+        🔐 招待制プライベートアクセス - このサイトは知人限定公開です
+    </div>
+    
+    <header class="modern-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1 class="site-title">
+                        <a href="../index.html" style="color: inherit; text-decoration: none;">
+                            <span class="title-icon">🤖</span>
+                            生成AI ステップアップガイド
+                        </a>
+                    </h1>
+                </div>
+                
+                <div class="header-controls">
+                    <button 
+                        id="theme-toggle" 
+                        class="theme-toggle-btn" 
+                        aria-label="テーマ切り替え"
+                        title="ライト/ダークモード切り替え"
+                    >
+                        <span class="theme-icon light-icon">☀️</span>
+                        <span class="theme-icon dark-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- パンくずナビゲーション -->
+            <nav aria-label="パンくずナビゲーション" class="breadcrumb-nav" style="padding: 10px 0; font-size: 14px;">
+                <a href="../index.html" style="color: #FF6B35; text-decoration: none;">🏠 ホーム</a>
+                <span style="margin: 0 8px; color: #666;">›</span>
+                <span style="color: #333;">6. プロンプトを作成する</span>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            
+            <!-- ページタイトル -->
+            <div class="page-title-section" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #FF6B35; margin-bottom: 15px;">
+                    ✍️ プロンプトを作成する
+                </h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    効果的なプロンプト作成の5ステップ手法、実践テンプレート集、チェックリストで実用的なAI活用スキルを習得
+                </p>
+            </div>
+
+            <!-- 導入 -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #8b5cf6;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #8b5cf6;">
+                    🍳 プロンプト作成は料理のレシピ作りと似ています
+                </h3>
+                
+                <p class="text-dark-force" style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
+                    プロンプト作成は料理のレシピ作りと似ています。材料（情報）を揃えて、手順（構造）を整理し、味付け（調整）を行うことで、望ましい結果を得られます。
+                </p>
+                
+                <div style="background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 3px solid #8b5cf6;">
+                    <h4 class="text-dark-force" style="color: #8b5cf6; margin: 0 0 10px 0;">🎯 このページで学べること</h4>
+                    <ul class="text-dark-force" style="margin: 0; padding-left: 20px;">
+                        <li>効果的なプロンプト作成の5ステップ手法</li>
+                        <li>用途別のテンプレート集（ビジネス、創作、分析など）</li>
+                        <li>プロンプト改善のチェックリスト</li>
+                        <li>よくある失敗パターンと対策</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5ステップ手法 -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #0ea5e9;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 30px; color: #0ea5e9;">
+                    🚀 効果的なプロンプト作成の5ステップ
+                </h3>
+
+                <!-- ステップ1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4 class="text-dark-force" style="color: #0ea5e9; margin: 0 0 15px 0; font-weight: 600; font-size: 1.3rem;">
+                        目的の明確化
+                    </h4>
+                    <ul class="text-dark-force" style="margin: 0; padding-left: 20px;">
+                        <li>何を達成したいか具体的に定義する</li>
+                        <li>読み手（対象者）を明確にする</li>
+                        <li>出力形式（表、箇条書き、文章など）を決める</li>
+                    </ul>
+                </div>
+
+                <!-- ステップ2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4 class="text-dark-force" style="color: #0ea5e9; margin: 0 0 15px 0; font-weight: 600; font-size: 1.3rem;">
+                        基本テンプレートの選択
+                    </h4>
+                    <div class="table-container">
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>テンプレート種類</th>
+                                    <th>適用場面</th>
+                                    <th>基本構造</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-dark-force">
+                                <tr>
+                                    <td><strong>問題解決型</strong></td>
+                                    <td>業務の課題解決、改善提案</td>
+                                    <td>背景 → 問題 → 制約 → 求める解決策</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>創作・企画型</strong></td>
+                                    <td>アイデア出し、コンテンツ作成</td>
+                                    <td>テーマ → 対象読者 → トーン → 出力形式</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>分析・調査型</strong></td>
+                                    <td>データ分析、市場調査</td>
+                                    <td>データ → 分析観点 → 出力形式 → 根拠の要求</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>学習支援型</strong></td>
+                                    <td>教育、説明資料作成</td>
+                                    <td>対象レベル → 学習目標 → 説明方法 → 確認方法</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- ステップ3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4 class="text-dark-force" style="color: #0ea5e9; margin: 0 0 15px 0; font-weight: 600; font-size: 1.3rem;">
+                        コンテキスト設定
+                    </h4>
+                    <div class="template-box">
+### あなたの役割
+[専門家、初心者、特定職業など具体的な立場を設定]
+
+### 状況・背景
+[現在の状況や前提条件を詳しく説明]
+
+### 制約条件
+- 文字数: ○○字以内
+- トーン: [丁寧、カジュアル、専門的など]
+- 避けるべき内容: [特定の表現や情報]
+                    </div>
+                </div>
+
+                <!-- ステップ4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4 class="text-dark-force" style="color: #0ea5e9; margin: 0 0 15px 0; font-weight: 600; font-size: 1.3rem;">
+                        具体的な指示の構成
+                    </h4>
+                    <div class="template-box">
+### タスク
+[具体的に何をしてほしいか明記]
+
+### 出力形式
+[表、箇条書き、JSON、Markdownなど具体的に指定]
+
+### 成功基準
+[どんな結果が得られれば成功か明確化]
+                    </div>
+                </div>
+
+                <!-- ステップ5 -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h4 class="text-dark-force" style="color: #0ea5e9; margin: 0 0 15px 0; font-weight: 600; font-size: 1.3rem;">
+                        検証と改善
+                    </h4>
+                    <ul class="text-dark-force" style="margin: 0; padding-left: 20px;">
+                        <li>初回実行結果を確認</li>
+                        <li>不足している情報や指示を特定</li>
+                        <li>追加質問で段階的に改善</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 実践用テンプレート集 -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #22c55e;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 30px; color: #22c55e;">
+                    📝 実践用テンプレート集
+                </h3>
+
+                <!-- ビジネス文書作成テンプレート -->
+                <div style="margin-bottom: 30px;">
+                    <h4 class="text-dark-force" style="color: #22c55e; margin-bottom: 15px; font-size: 1.3rem;">
+                        📄 ビジネス文書作成テンプレート
+                    </h4>
+                    <div class="template-box">
+あなたは経験豊富なビジネス文書の専門家です。
+
+【背景】
+[会社名/部署/状況を記載]
+
+【依頼内容】
+以下の内容で[文書種類]を作成してください：
+- 対象読者: [役職/部署/レベル]
+- 目的: [何のための文書か]
+- 重要ポイント: [絶対に伝えたい内容3つ]
+
+【制約】
+- 文字数: [○○字以内]
+- トーン: [丁寧/親しみやすい/フォーマル]
+- 形式: [メール/レポート/提案書など]
+
+【出力形式】
+1. 件名または タイトル
+2. 本文
+3. 必要に応じて添付資料の概要
+                    </div>
+                </div>
+
+                <!-- 問題解決テンプレート -->
+                <div style="margin-bottom: 30px;">
+                    <h4 class="text-dark-force" style="color: #ef4444; margin-bottom: 15px; font-size: 1.3rem;">
+                        🔧 問題解決テンプレート
+                    </h4>
+                    <div class="template-box">
+あなたは問題解決の専門コンサルタントです。
+
+【現状】
+[問題の詳細な状況説明]
+
+【制約・条件】
+- 予算: [金額または制限]
+- 期限: [いつまでに]
+- 利用可能リソース: [人員/時間/ツールなど]
+
+【求める解決策】
+1. 問題の根本原因分析
+2. 解決策を3つ以上提示（実現可能性順）
+3. 各解決策のメリット・デメリット
+4. 推奨案とその理由
+5. 実行スケジュール案
+
+【出力形式】
+表形式で比較しやすく整理してください。
+                    </div>
+                </div>
+
+                <!-- アイデア創出テンプレート -->
+                <div style="margin-bottom: 30px;">
+                    <h4 class="text-dark-force" style="color: #8b5cf6; margin-bottom: 15px; font-size: 1.3rem;">
+                        💡 アイデア創出テンプレート
+                    </h4>
+                    <div class="template-box">
+あなたは創造性豊かなアイデアプランナーです。
+
+【テーマ】
+[何についてのアイデアか]
+
+【対象】
+- ターゲット: [年齢/性別/職業/興味など]
+- 利用シーン: [いつ/どこで/どんな時に]
+
+【条件】
+- 予算感: [高/中/低 または具体的金額]
+- 実現期間: [短期/中期/長期]
+- 重視する要素: [新規性/実用性/インパクトなど]
+
+【求める出力】
+1. ブレインストーミング: 10個以上のアイデア
+2. 厳選: 上位3つの詳細化
+3. 実現方法: 具体的な手順
+4. 成功指標: 何をもって成功とするか
+
+【形式】
+各アイデアに「⭐新規性」「💰コスト」「⏰実現性」で評価を付けてください。
+                    </div>
+                </div>
+            </div>
+
+            <!-- チェックリスト -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #f59e0b;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #f59e0b;">
+                    ✅ プロンプト改善のチェックリスト
+                </h3>
+                
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <span class="checklist-icon">□</span>
+                        <span class="text-dark-force"><strong>明確性</strong>: 求める結果が具体的に書かれているか</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">□</span>
+                        <span class="text-dark-force"><strong>完整性</strong>: 必要な情報がすべて含まれているか</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">□</span>
+                        <span class="text-dark-force"><strong>制約</strong>: 文字数、形式、トーンが指定されているか</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">□</span>
+                        <span class="text-dark-force"><strong>対象</strong>: 読み手や利用者が明確になっているか</span>
+                    </div>
+                    <div class="checklist-item">
+                        <span class="checklist-icon">□</span>
+                        <span class="text-dark-force"><strong>検証</strong>: 成功基準や評価方法が含まれているか</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- よくある失敗と対策 -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #ef4444;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #ef4444;">
+                    ⚠️ よくある失敗と対策
+                </h3>
+                
+                <div class="table-container">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>失敗パターン</th>
+                                <th>原因</th>
+                                <th>改善策</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-dark-force">
+                            <tr>
+                                <td>答えが浅い</td>
+                                <td>情報不足、曖昧な指示</td>
+                                <td>背景情報を詳しく、具体例を追加</td>
+                            </tr>
+                            <tr>
+                                <td>方向性が違う</td>
+                                <td>目的や対象が不明確</td>
+                                <td>役割設定と成功基準を明記</td>
+                            </tr>
+                            <tr>
+                                <td>出力が長すぎる</td>
+                                <td>制約の未指定</td>
+                                <td>文字数制限と優先順位を設定</td>
+                            </tr>
+                            <tr>
+                                <td>実用性が低い</td>
+                                <td>現実的制約の考慮不足</td>
+                                <td>予算、期限、リソースを明示</td>
+                            </tr>
+                            <tr>
+                                <td>専門性不足</td>
+                                <td>役割設定が曖昧</td>
+                                <td>具体的な専門家像を設定</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 実践のヒント -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #6366f1;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #6366f1;">
+                    💎 プロンプト作成の実践のヒント
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 3px solid #0ea5e9;">
+                        <h4 class="text-dark-force" style="color: #0c4a6e; margin: 0 0 10px 0;">🎯 段階的詳細化</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            最初はシンプルに始めて、結果を見ながら段階的に詳細を追加していく方法が効果的です。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                        <h4 class="text-dark-force" style="color: #92400e; margin: 0 0 10px 0;">🔄 反復改善</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            一度で完璧を求めず、結果を評価して「もう少し具体的に」「違う角度で」と改善を重ねましょう。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; border-left: 3px solid #22c55e;">
+                        <h4 class="text-dark-force" style="color: #15803d; margin: 0 0 10px 0;">📚 例示の活用</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            期待する出力の例を示すことで、AIはより正確にあなたの意図を理解し、適切な回答を生成します。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #fdf2f8; padding: 20px; border-radius: 8px; border-left: 3px solid #ec4899;">
+                        <h4 class="text-dark-force" style="color: #be185d; margin: 0 0 10px 0;">🎭 ペルソナ設定</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            「あなたは○○の専門家です」のような具体的な役割設定により、専門性の高い回答を引き出せます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ナビゲーション -->
+            <div class="page-navigation" style="margin-top: 50px; text-align: center;">
+                <a href="05-limitations-safety.html" class="content-link" style="margin-right: 20px;">← 前へ：制限と安全対策</a>
+                <a href="../index.html" class="content-link">🏠 ホームに戻る</a>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo" style="background: #1f2937; color: white; padding: 30px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 生成AIステップアップガイド - Phase 8完了版</p>
+            <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 5px;">
+                6項目構成による体系的なAIリテラシー向上ガイド（プライベートアクセス）
+            </p>
+        </div>
+    </footer>
+
+    <!-- ダークモード対応JavaScript -->
+    <script>
+        // ダークモード検出と動的スタイル適用
+        function applyThemeStyles() {
+            const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // 全ての要素を取得
+            const contentCards = document.querySelectorAll('.content-card');
+            const textElements = document.querySelectorAll('.text-dark-force');
+            const stepCards = document.querySelectorAll('.step-card');
+            const styledTables = document.querySelectorAll('.styled-table');
+            
+            if (isDarkMode) {
+                console.log('ダークモード検出 - プロンプト作成ページスタイル適用中');
+                
+                // コンテンツカードをダークテーマに
+                contentCards.forEach(card => {
+                    card.className = card.className.replace('content-card-light', 'content-card-dark');
+                    card.style.background = '#374151';
+                    card.style.color = '#f9fafb';
+                });
+                
+                // テキスト要素をライトテーマに
+                textElements.forEach(element => {
+                    element.style.color = '#f9fafb';
+                });
+                
+                // ステップカードをダークテーマに
+                stepCards.forEach(card => {
+                    card.style.background = '#4b5563';
+                    card.style.borderColor = '#6b7280';
+                    card.style.color = '#f9fafb';
+                });
+                
+                // テーブルをダークテーマに調整
+                styledTables.forEach(table => {
+                    table.style.background = '#4b5563';
+                    const headers = table.querySelectorAll('th');
+                    const cells = table.querySelectorAll('td');
+                    
+                    headers.forEach(th => {
+                        th.style.background = '#6b7280';
+                        th.style.color = '#f9fafb';
+                        th.style.borderBottom = '1px solid #9ca3af';
+                    });
+                    
+                    cells.forEach(td => {
+                        td.style.color = '#e5e7eb';
+                        td.style.borderBottom = '1px solid #6b7280';
+                    });
+                });
+                
+            } else {
+                console.log('ライトモード検出 - デフォルトスタイル適用');
+                
+                // ライトモードの場合はデフォルトスタイルを確実に適用
+                contentCards.forEach(card => {
+                    card.style.background = '#ffffff';
+                    card.style.color = '#1f2937';
+                });
+                
+                textElements.forEach(element => {
+                    element.style.color = '#1f2937';
+                });
+            }
+        }
+        
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', applyThemeStyles);
+        
+        // システムテーマ変更を監視
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(applyThemeStyles);
+        }
+        
+        // 手動テーマ切り替えボタンがある場合の対応
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                setTimeout(applyThemeStyles, 100);
+            });
+        }
+    </script>
+    
+    <!-- 既存のテーマ切り替え機能 -->
+    <script src="../src/js/theme-toggle.js"></script>
+</body>
+</html> 

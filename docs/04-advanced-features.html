@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 プライベートアクセス設定：検索エンジン完全ブロック -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+    
+    <title>便利機能・拡張 - 生成AIステップアップガイド</title>
+    <meta name="description" content="ChatGPT Plus、Perplexity Pro、NotebookLMの便利機能を比喩で分かりやすく解説">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* 確実なダークモード対応 */
+        .force-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .force-dark {
+            background: #1f2937 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* コンテンツカード用スタイル */
+        .content-card-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .content-card-dark {
+            background: #374151 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* テキスト色の強制指定 */
+        .text-dark-force {
+            color: #1f2937 !important;
+        }
+        
+        .text-light-force {
+            color: #f9fafb !important;
+        }
+        
+        /* 機能カード */
+        .feature-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* サービス別アイコン */
+        .service-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            margin-right: 15px;
+            vertical-align: middle;
+        }
+        
+        .chatgpt-icon {
+            background: linear-gradient(135deg, #10a37f, #1a7f64);
+            color: white;
+        }
+        
+        .perplexity-icon {
+            background: linear-gradient(135deg, #1e40af, #1e3a8a);
+            color: white;
+        }
+        
+        .notebooklm-icon {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+        }
+        
+        /* 比喩ボックス */
+        .metaphor-box {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-to-content">メインコンテンツにスキップ</a>
+    
+    <!-- 🔒 プライベートアクセス表示 -->
+    <div class="private-access-banner" style="background: linear-gradient(135deg, #FF6B35, #FF8E53); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 600;">
+        🔐 招待制プライベートアクセス - このサイトは知人限定公開です
+    </div>
+    
+    <header class="modern-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1 class="site-title">
+                        <a href="../index.html" style="color: inherit; text-decoration: none;">
+                            <span class="title-icon">🤖</span>
+                            生成AI ステップアップガイド
+                        </a>
+                    </h1>
+                </div>
+                
+                <div class="header-controls">
+                    <button 
+                        id="theme-toggle" 
+                        class="theme-toggle-btn" 
+                        aria-label="テーマ切り替え"
+                        title="ライト/ダークモード切り替え"
+                    >
+                        <span class="theme-icon light-icon">☀️</span>
+                        <span class="theme-icon dark-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- パンくずナビゲーション -->
+            <nav aria-label="パンくずナビゲーション" class="breadcrumb-nav" style="padding: 10px 0; font-size: 14px;">
+                <a href="../index.html" style="color: #FF6B35; text-decoration: none;">🏠 ホーム</a>
+                <span style="margin: 0 8px; color: #666;">›</span>
+                <span style="color: #333;">4. 便利機能・拡張</span>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            
+            <!-- ページタイトル -->
+            <div class="page-title-section" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #FF6B35; margin-bottom: 15px;">
+                    ⚡ 便利機能・拡張
+                </h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    各サービスの便利機能を分かりやすい比喩で解説。もっと効果的にAIを活用しましょう！
+                </p>
+            </div>
+
+            <!-- ChatGPT Plus -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #10a37f;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #10a37f;">
+                    <span class="service-icon chatgpt-icon">🤖</span>
+                    ChatGPT Plus
+                </h3>
+                
+                <div class="feature-card">
+                    <h4 class="text-dark-force" style="color: #10a37f; margin: 0 0 10px 0; font-weight: 600;">
+                        🛍️ GPTs & ストア
+                    </h4>
+                    <p class="text-dark-force" style="margin: 0 0 10px 0; font-size: 0.95rem;">
+                        他ユーザーが作ったAIアシスタント（GPT）を自由に呼び出して使える機能です。
+                    </p>
+                    <div class="metaphor-box">
+                        💭 比喩: いわば「<strong>AIのアプリストア</strong>」のようなもの。料理レシピ専門AI、英語学習AI、プログラミング支援AIなど、目的別に特化したAIが揃っています。
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <h4 class="text-dark-force" style="color: #10a37f; margin: 0 0 10px 0; font-weight: 600;">
+                        📊 Advanced Data Analysis
+                    </h4>
+                    <p class="text-dark-force" style="margin: 0 0 10px 0; font-size: 0.95rem;">
+                        CSVやExcelファイルのデータを簡単に視覚化できる機能です。
+                    </p>
+                    <div class="metaphor-box">
+                        💭 比喩: <strong>専属データアナリスト</strong>のような存在。売上データをアップロードするだけで、グラフ作成から傾向分析まで自動で行ってくれます。
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <h4 class="text-dark-force" style="color: #10a37f; margin: 0 0 10px 0; font-weight: 600;">
+                        🎙️ 音声入力 & 画面共有
+                    </h4>
+                    <p class="text-dark-force" style="margin: 0 0 10px 0; font-size: 0.95rem;">
+                        スマホアプリで友人に話す感覚で音声入力が可能。画面を共有しながら会話もできます。
+                    </p>
+                    <div class="metaphor-box">
+                        💭 比喩: <strong>リモート相談</strong>のような便利さ。「この画面のここが分からない」と画面を見せながら質問できるので、非常に直感的です。
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perplexity Pro -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #1e40af;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #1e40af;">
+                    <span class="service-icon perplexity-icon">🔍</span>
+                    Perplexity Pro
+                </h3>
+                
+                <div class="feature-card">
+                    <h4 class="text-dark-force" style="color: #1e40af; margin: 0 0 10px 0; font-weight: 600;">
+                        🎯 Focus モード
+                    </h4>
+                    <p class="text-dark-force" style="margin: 0 0 10px 0; font-size: 0.95rem;">
+                        検索対象を学術論文（Academic）やニュース（News）などに絞れる機能です。
+                    </p>
+                    <div class="metaphor-box">
+                        💭 比喩: <strong>図書館の専門コーナー</strong>のような機能。医学書コーナーや新聞・雑誌コーナーのように、信頼性の高い情報源だけを選んで調査できます。
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <h4 class="text-dark-force" style="color: #1e40af; margin: 0 0 10px 0; font-weight: 600;">
+                        🌐 Spaces 共有
+                    </h4>
+                    <p class="text-dark-force" style="margin: 0 0 10px 0; font-size: 0.95rem;">
+                        検索結果や調査内容をオンラインで簡単に共有できる機能です。
+                    </p>
+                    <div class="metaphor-box">
+                        💭 比喩: <strong>オンライン掲示板</strong>のような使い勝手。チームメンバーと調査結果を共有したり、議論を続けたりできます。
+                    </div>
+                </div>
+            </div>
+
+            <!-- NotebookLM -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #dc2626;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #dc2626;">
+                    <span class="service-icon notebooklm-icon">📚</span>
+                    NotebookLM
+                </h3>
+                
+                <div class="feature-card">
+                    <h4 class="text-dark-force" style="color: #dc2626; margin: 0 0 10px 0; font-weight: 600;">
+                        📋 Auto Source Guide
+                    </h4>
+                    <p class="text-dark-force" style="margin: 0 0 10px 0; font-size: 0.95rem;">
+                        文書をアップロードすると重要な要点を自動抽出・要約してくれる機能です。
+                    </p>
+                    <div class="metaphor-box">
+                        💭 比喩: <strong>優秀な秘書</strong>が文書整理してくれる感覚。長い報告書や資料を渡すと、重要なポイントだけを整理してくれます。
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <h4 class="text-dark-force" style="color: #dc2626; margin: 0 0 10px 0; font-weight: 600;">
+                        🎧 音声要約再生
+                    </h4>
+                    <p class="text-dark-force" style="margin: 0 0 10px 0; font-size: 0.95rem;">
+                        長い文書の要約をポッドキャスト形式で聴ける機能です。
+                    </p>
+                    <div class="metaphor-box">
+                        💭 比喩: <strong>通勤時のラジオ番組</strong>のような機能。複雑な資料も音声で要約してくれるので、移動中でも効率的に情報収集できます。
+                    </div>
+                </div>
+            </div>
+
+            <!-- 活用のコツ -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #8b5cf6;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #8b5cf6;">
+                    💡 便利機能の活用シーン
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; border-left: 3px solid #22c55e;">
+                        <h4 class="text-dark-force" style="color: #15803d; margin: 0 0 10px 0;">📊 データ分析</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            <strong>ChatGPT Plus</strong>のAdvanced Data Analysisで売上データや顧客データを簡単に可視化・分析できます。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 3px solid #0ea5e9;">
+                        <h4 class="text-dark-force" style="color: #0c4a6e; margin: 0 0 10px 0;">🔍 専門調査</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            <strong>Perplexity Pro</strong>のFocusモードで学術論文や最新ニュースに限定した信頼性の高い情報収集が可能です。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #fef2f2; padding: 20px; border-radius: 8px; border-left: 3px solid #ef4444;">
+                        <h4 class="text-dark-force" style="color: #b91c1c; margin: 0 0 10px 0;">📚 資料整理</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            <strong>NotebookLM</strong>で大量の資料を一元管理し、音声要約で効率的に内容を把握できます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ナビゲーション -->
+            <div class="page-navigation" style="margin-top: 50px; text-align: center;">
+                <a href="03-use-cases.html" class="content-link" style="margin-right: 20px;">← 前へ：ユースケース＆サンプル</a>
+                <a href="../index.html" class="content-link" style="margin: 0 20px;">🏠 ホームに戻る</a>
+                <a href="05-limitations-safety.html" class="content-link">次へ：制限と安全対策 →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo" style="background: #1f2937; color: white; padding: 30px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 生成AIステップアップガイド - Phase 8完了版</p>
+            <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 5px;">
+                6項目構成による体系的なAIリテラシー向上ガイド（プライベートアクセス）
+            </p>
+        </div>
+    </footer>
+
+    <!-- ダークモード対応JavaScript -->
+    <script>
+        // ダークモード検出と動的スタイル適用
+        function applyThemeStyles() {
+            const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // 全ての要素を取得
+            const contentCards = document.querySelectorAll('.content-card');
+            const textElements = document.querySelectorAll('.text-dark-force');
+            const featureCards = document.querySelectorAll('.feature-card');
+            
+            if (isDarkMode) {
+                console.log('ダークモード検出 - 便利機能ページスタイル適用中');
+                
+                // コンテンツカードをダークテーマに
+                contentCards.forEach(card => {
+                    card.className = card.className.replace('content-card-light', 'content-card-dark');
+                    card.style.background = '#374151';
+                    card.style.color = '#f9fafb';
+                });
+                
+                // テキスト要素をライトテーマに
+                textElements.forEach(element => {
+                    element.style.color = '#f9fafb';
+                });
+                
+                // 機能カードをダークテーマに
+                featureCards.forEach(card => {
+                    card.style.background = '#4b5563';
+                    card.style.borderColor = '#6b7280';
+                    card.style.color = '#f9fafb';
+                });
+                
+            } else {
+                console.log('ライトモード検出 - デフォルトスタイル適用');
+                
+                // ライトモードの場合はデフォルトスタイルを確実に適用
+                contentCards.forEach(card => {
+                    card.style.background = '#ffffff';
+                    card.style.color = '#1f2937';
+                });
+                
+                textElements.forEach(element => {
+                    element.style.color = '#1f2937';
+                });
+            }
+        }
+        
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', applyThemeStyles);
+        
+        // システムテーマ変更を監視
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(applyThemeStyles);
+        }
+        
+        // 手動テーマ切り替えボタンがある場合の対応
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                setTimeout(applyThemeStyles, 100);
+            });
+        }
+    </script>
+    
+    <!-- 既存のテーマ切り替え機能 -->
+    <script src="../src/js/theme-toggle.js"></script>
+</body>
+</html> 

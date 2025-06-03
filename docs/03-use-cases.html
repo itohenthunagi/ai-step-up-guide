@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 プライベートアクセス設定：検索エンジン完全ブロック -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet">
+    
+    <title>よくあるユースケース＆サンプル - 生成AIステップアップガイド</title>
+    <meta name="description" content="ビジネス、学習、創作活動など様々な場面での具体的なAI活用例とサンプルプロンプトを紹介">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* 確実なダークモード対応 */
+        .force-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .force-dark {
+            background: #1f2937 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* コンテンツカード用スタイル */
+        .content-card-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
+        }
+        
+        .content-card-dark {
+            background: #374151 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* テキスト色の強制指定 */
+        .text-dark-force {
+            color: #1f2937 !important;
+        }
+        
+        .text-light-force {
+            color: #f9fafb !important;
+        }
+        
+        /* テーブルスタイル */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .styled-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+            vertical-align: top;
+        }
+        
+        .styled-table th {
+            background: #f3f4f6;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        /* カテゴリアイコン */
+        .category-icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 12px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        
+        .business-icon {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+        }
+        
+        .daily-icon {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- スキップリンク -->
+    <a href="#main-content" class="skip-to-content">メインコンテンツにスキップ</a>
+    
+    <!-- 🔒 プライベートアクセス表示 -->
+    <div class="private-access-banner" style="background: linear-gradient(135deg, #FF6B35, #FF8E53); color: white; text-align: center; padding: 8px 0; font-size: 14px; font-weight: 600;">
+        🔐 招待制プライベートアクセス - このサイトは知人限定公開です
+    </div>
+    
+    <header class="modern-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-main">
+                    <h1 class="site-title">
+                        <a href="../index.html" style="color: inherit; text-decoration: none;">
+                            <span class="title-icon">🤖</span>
+                            生成AI ステップアップガイド
+                        </a>
+                    </h1>
+                </div>
+                
+                <div class="header-controls">
+                    <button 
+                        id="theme-toggle" 
+                        class="theme-toggle-btn" 
+                        aria-label="テーマ切り替え"
+                        title="ライト/ダークモード切り替え"
+                    >
+                        <span class="theme-icon light-icon">☀️</span>
+                        <span class="theme-icon dark-icon">🌙</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- パンくずナビゲーション -->
+            <nav aria-label="パンくずナビゲーション" class="breadcrumb-nav" style="padding: 10px 0; font-size: 14px;">
+                <a href="../index.html" style="color: #FF6B35; text-decoration: none;">🏠 ホーム</a>
+                <span style="margin: 0 8px; color: #666;">›</span>
+                <span style="color: #333;">3. よくあるユースケース＆サンプル</span>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 40px 20px;">
+            
+            <!-- ページタイトル -->
+            <div class="page-title-section" style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: #FF6B35; margin-bottom: 15px;">
+                    💡 よくあるユースケース＆サンプル
+                </h2>
+                <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">
+                    ビジネス、学習、創作活動など、様々な場面での具体的な活用例とサンプルプロンプトを紹介します
+                </p>
+            </div>
+
+            <!-- ビジネス活用 -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #3b82f6;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #3b82f6;">
+                    <span class="category-icon business-icon">💼</span>
+                    ビジネス活用
+                </h3>
+                
+                <p class="text-dark-force" style="font-size: 1rem; line-height: 1.6; margin-bottom: 25px; color: #666;">
+                    業務効率化から創作活動まで、プロフェッショナルな場面でのAI活用事例をご紹介します。
+                </p>
+                
+                <div class="table-container">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">カテゴリ</th>
+                                <th style="width: 40%;">代表プロンプト</th>
+                                <th style="width: 40%;">補足</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-dark-force">
+                            <tr>
+                                <td><strong>📝 文書作成</strong></td>
+                                <td>「初心者向けに新商品の案内文を400字で書いて」</td>
+                                <td>読者を明示してターゲットを明確化</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📊 情報整理</strong></td>
+                                <td>「次の資料から要点を箇条書きでまとめて」</td>
+                                <td>NotebookLM活用</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📧 メール作成</strong></td>
+                                <td>「丁寧なトーンで取引先への断りメールを書いて」</td>
+                                <td>状況説明を加えると品質向上</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📈 プレゼン準備</strong></td>
+                                <td>「明日のプレゼン骨子を初心者にも分かるように整理して」</td>
+                                <td>要点を明確にしてAIに整理させる</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🔧 問題解決支援</strong></td>
+                                <td>「プロジェクトが遅延した原因を分析して改善策を提示」</td>
+                                <td>Chain-of-Thoughtで論理的に対応</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📱 市場調査</strong></td>
+                                <td>「最新のスマートフォン市場のトレンドをまとめて」</td>
+                                <td>Perplexityで最新データ取得</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📅 プロジェクト計画</strong></td>
+                                <td>「新プロジェクトの具体的なマイルストーンを作成して」</td>
+                                <td>ゴールシークで具体化</td>
+                            </tr>
+                            <tr>
+                                <td><strong>💡 ブレインストーミング</strong></td>
+                                <td>「若者向けの新しいマーケティング施策を10個挙げて」</td>
+                                <td>多様なアイデアを引き出す用途</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📞 クレーム対応</strong></td>
+                                <td>「顧客からの苦情メールに対して適切な返信文を書いて」</td>
+                                <td>丁寧で共感的なトーンが重要</td>
+                            </tr>
+                            <tr>
+                                <td><strong>👥 採用面接準備</strong></td>
+                                <td>「新卒採用の面接で質問すべき重要なポイントをリストアップ」</td>
+                                <td>ロールプレイで面接官の視点から準備</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 日常活用 -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #10b981;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #10b981;">
+                    <span class="category-icon daily-icon">🏠</span>
+                    日常活用
+                </h3>
+                
+                <p class="text-dark-force" style="font-size: 1rem; line-height: 1.6; margin-bottom: 25px; color: #666;">
+                    毎日の生活をより便利で豊かにするための、身近なAI活用シーンをご紹介します。
+                </p>
+                
+                <div class="table-container">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 20%;">カテゴリ</th>
+                                <th style="width: 40%;">代表プロンプト</th>
+                                <th style="width: 40%;">補足</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-dark-force">
+                            <tr>
+                                <td><strong>🍳 レシピ提案</strong></td>
+                                <td>「家にある材料（卵・トマト・チーズ）で作れる簡単な料理」</td>
+                                <td>日常の即席料理で活用</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🎁 贈り物選び</strong></td>
+                                <td>「母の日のプレゼントで喜ばれるものを5つ挙げて」</td>
+                                <td>相手や状況を具体的に指定</td>
+                            </tr>
+                            <tr>
+                                <td><strong>✈️ 旅行計画</strong></td>
+                                <td>「週末の2泊3日の京都旅行プランを立てて」</td>
+                                <td>予算や趣味を加えると精度アップ</td>
+                            </tr>
+                            <tr>
+                                <td><strong>💪 健康相談</strong></td>
+                                <td>「最近睡眠不足なので改善方法を教えて」</td>
+                                <td>専門的知識を求めるならロールプレイ利用</td>
+                            </tr>
+                            <tr>
+                                <td><strong>📚 学習支援</strong></td>
+                                <td>「小学生が理解できるように宇宙の仕組みを簡単に説明して」</td>
+                                <td>難解なテーマを分かりやすく噛み砕く</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🎨 趣味の提案</strong></td>
+                                <td>「週末に家族で楽しめる新しい趣味を3つ提案して」</td>
+                                <td>年齢や興味を指定すると効果的</td>
+                            </tr>
+                            <tr>
+                                <td><strong>👗 ファッション相談</strong></td>
+                                <td>「夏のアウトドアに適した服装のアイデアを教えて」</td>
+                                <td>季節やシーンを明示する</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🐕 ペット相談</strong></td>
+                                <td>「子犬のしつけ方法を初心者にも分かるように説明して」</td>
+                                <td>具体的な問題を示すとより効果的</td>
+                            </tr>
+                            <tr>
+                                <td><strong>🧹 家事アドバイス</strong></td>
+                                <td>「短時間で部屋をきれいにする効率的な掃除の方法を教えて」</td>
+                                <td>時短テクニックや具体例を求める</td>
+                            </tr>
+                            <tr>
+                                <td><strong>💰 節約術</strong></td>
+                                <td>「食費を抑えるための実践的なアドバイスを3つ挙げて」</td>
+                                <td>具体的な生活シーンを加えると実用的</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 活用のコツ -->
+            <div class="content-card content-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #f59e0b;">
+                <h3 class="text-dark-force" style="font-size: 1.8rem; margin-bottom: 20px; color: #f59e0b;">
+                    💎 効果的な活用のコツ
+                </h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="background: #fef3c7; padding: 20px; border-radius: 8px; border-left: 3px solid #f59e0b;">
+                        <h4 class="text-dark-force" style="color: #92400e; margin: 0 0 10px 0;">🎯 具体的な指示</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            「○○について教えて」より「○○を初心者向けに3つのポイントで説明して」のように、具体的な要求を明示しましょう。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #f0f9ff; padding: 20px; border-radius: 8px; border-left: 3px solid #0ea5e9;">
+                        <h4 class="text-dark-force" style="color: #0c4a6e; margin: 0 0 10px 0;">📏 制約の設定</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            文字数制限（「200字以内で」）や出力形式（「箇条書きで」「表形式で」）を指定すると、期待通りの結果が得られやすくなります。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #f0fdf4; padding: 20px; border-radius: 8px; border-left: 3px solid #22c55e;">
+                        <h4 class="text-dark-force" style="color: #15803d; margin: 0 0 10px 0;">🔄 段階的改善</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            一度の質問で完璧を求めず、結果を見て「もう少し詳しく」「別の角度で」と追加質問で改善していくことが重要です。
+                        </p>
+                    </div>
+                    
+                    <div style="background: #fdf2f8; padding: 20px; border-radius: 8px; border-left: 3px solid #ec4899;">
+                        <h4 class="text-dark-force" style="color: #be185d; margin: 0 0 10px 0;">👤 役割設定</h4>
+                        <p class="text-dark-force" style="margin: 0; font-size: 0.9rem;">
+                            「あなたは経験豊富な○○です」のように役割を設定することで、より専門的で深い回答を得ることができます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ナビゲーション -->
+            <div class="page-navigation" style="margin-top: 50px; text-align: center;">
+                <a href="02-prompt-design.html" class="content-link" style="margin-right: 20px;">← 前へ：プロンプト設計</a>
+                <a href="../index.html" class="content-link" style="margin: 0 20px;">🏠 ホームに戻る</a>
+                <a href="04-advanced-features.html" class="content-link">次へ：便利機能・拡張 →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer role="contentinfo" style="background: #1f2937; color: white; padding: 30px 0; margin-top: 60px;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2025 生成AIステップアップガイド - Phase 8完了版</p>
+            <p style="font-size: 0.9rem; color: #9ca3af; margin-top: 5px;">
+                6項目構成による体系的なAIリテラシー向上ガイド（プライベートアクセス）
+            </p>
+        </div>
+    </footer>
+
+    <!-- ダークモード対応JavaScript -->
+    <script>
+        // ダークモード検出と動的スタイル適用
+        function applyThemeStyles() {
+            const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // 全ての要素を取得
+            const contentCards = document.querySelectorAll('.content-card');
+            const textElements = document.querySelectorAll('.text-dark-force');
+            const styledTables = document.querySelectorAll('.styled-table');
+            
+            if (isDarkMode) {
+                console.log('ダークモード検出 - ユースケースページスタイル適用中');
+                
+                // コンテンツカードをダークテーマに
+                contentCards.forEach(card => {
+                    card.className = card.className.replace('content-card-light', 'content-card-dark');
+                    card.style.background = '#374151';
+                    card.style.color = '#f9fafb';
+                });
+                
+                // テキスト要素をライトテーマに
+                textElements.forEach(element => {
+                    element.style.color = '#f9fafb';
+                });
+                
+                // テーブルをダークテーマに調整
+                styledTables.forEach(table => {
+                    table.style.background = '#4b5563';
+                    const headers = table.querySelectorAll('th');
+                    const cells = table.querySelectorAll('td');
+                    
+                    headers.forEach(th => {
+                        th.style.background = '#6b7280';
+                        th.style.color = '#f9fafb';
+                        th.style.borderBottom = '1px solid #9ca3af';
+                    });
+                    
+                    cells.forEach(td => {
+                        td.style.color = '#e5e7eb';
+                        td.style.borderBottom = '1px solid #6b7280';
+                    });
+                });
+                
+            } else {
+                console.log('ライトモード検出 - デフォルトスタイル適用');
+                
+                // ライトモードの場合はデフォルトスタイルを確実に適用
+                contentCards.forEach(card => {
+                    card.style.background = '#ffffff';
+                    card.style.color = '#1f2937';
+                });
+                
+                textElements.forEach(element => {
+                    element.style.color = '#1f2937';
+                });
+            }
+        }
+        
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', applyThemeStyles);
+        
+        // システムテーマ変更を監視
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(applyThemeStyles);
+        }
+        
+        // 手動テーマ切り替えボタンがある場合の対応
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                setTimeout(applyThemeStyles, 100);
+            });
+        }
+    </script>
+    
+    <!-- 既存のテーマ切り替え機能 -->
+    <script src="../src/js/theme-toggle.js"></script>
+</body>
+</html> 
