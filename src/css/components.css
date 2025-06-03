@@ -26,8 +26,24 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
   pointer-events: none;
+  z-index: 1;
+}
+
+/* タイトル背景強化エリア */
+.modern-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 80%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 5;
+  border-radius: var(--radius-2xl);
 }
 
 /* ヘッダーコンテンツレイアウト */
@@ -38,7 +54,7 @@
   gap: var(--space-6);
   margin-bottom: var(--space-4);
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* プライベートアクセスバッジ（控えめ） */
@@ -56,6 +72,8 @@
   font-weight: 500;
   color: white;
   transition: all var(--duration-300) var(--ease-out);
+  flex-shrink: 0;
+  min-width: fit-content;
 }
 
 .private-access-badge:hover {
@@ -77,6 +95,8 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 20;
 }
 
 .site-title {
@@ -85,23 +105,43 @@
   font-weight: 800;
   margin: 0;
   color: white;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
   letter-spacing: -0.02em;
   display: flex;
   align-items: center;
   gap: var(--space-3);
   transition: all var(--duration-300) var(--ease-bounce);
+  position: relative;
+  z-index: 30;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .site-title:hover {
   transform: scale(1.02) translateY(-2px);
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 30px rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+}
+
+.site-title a {
+  color: inherit !important;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+  z-index: 40;
 }
 
 .title-icon {
   font-size: var(--font-size-xl);
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
   animation: bounce 2s infinite ease-in-out;
+  position: relative;
+  z-index: 50;
 }
 
 @keyframes bounce {
@@ -114,6 +154,8 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  position: relative;
+  z-index: 15;
 }
 
 .theme-toggle-btn {
@@ -172,36 +214,44 @@
   transform: translateY(0) rotate(0deg);
 }
 
-/* メインナビゲーション */
+/* メインナビゲーション - 絶対1行保証 */
 .main-nav {
   position: relative;
   z-index: 1;
+  width: 100%;
+  min-width: 600px; /* 最小幅を確保 */
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .main-nav ul {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* 絶対に折り返さない */
   justify-content: center;
+  align-items: center;
   gap: var(--space-2);
   margin: 0;
-  padding: 0;
+  padding: 0 var(--space-4);
   list-style: none;
+  min-height: 60px;
+  width: 100%;
 }
 
 .main-nav li {
   margin: 0;
+  flex-shrink: 0; /* 縮小を防ぐ */
 }
 
 .main-nav a {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
   color: white;
   text-decoration: none;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   font-weight: 600;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all var(--duration-300) var(--ease-out);
@@ -209,7 +259,10 @@
   overflow: hidden;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  min-height: 44px;
+  min-height: 40px;
+  white-space: nowrap;
+  min-width: fit-content;
+  text-align: center;
 }
 
 .main-nav a::before {
@@ -271,56 +324,95 @@
   letter-spacing: 0.01em;
 }
 
-/* レスポンシブ対応 */
+/* レスポンシブ対応 - 1行維持最優先 */
 @media (max-width: 767px) {
-  .header-content {
-    flex-direction: column;
-    gap: var(--space-4);
-    text-align: center;
+  .modern-header {
+    min-width: 100vw;
+    overflow-x: auto;
   }
   
-  .private-access-badge {
-    order: -1;
-    align-self: center;
+  .main-nav {
+    min-width: 500px; /* モバイル用最小幅 */
+  }
+  
+  .header-content {
+    flex-direction: row;
+    gap: var(--space-4);
+    text-align: center;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    z-index: 30;
   }
   
   .header-controls {
-    position: absolute;
+    position: relative;
     top: 0;
     right: 0;
+    z-index: 25;
   }
   
   .site-title {
     font-size: var(--font-size-xl);
     justify-content: center;
+    text-align: center;
+    z-index: 35;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.4));
   }
   
   .main-nav ul {
-    flex-direction: column;
-    gap: var(--space-2);
-    align-items: center;
+    flex-wrap: nowrap; /* 絶対に折り返さない */
+    gap: var(--space-1);
+    justify-content: flex-start;
+    padding: 0 var(--space-2);
   }
   
   .main-nav a {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-    padding: var(--space-4) var(--space-6);
+    padding: var(--space-2) var(--space-2);
+    font-size: var(--font-size-xs);
+    gap: var(--space-1);
+  }
+  
+  .nav-text {
+    font-size: var(--font-size-xs);
   }
 }
 
 @media (max-width: 480px) {
   .modern-header {
     padding: var(--space-3) 0;
+    min-width: 100vw;
+    overflow-x: auto;
+  }
+  
+  .main-nav {
+    min-width: 400px; /* 小画面用最小幅 */
   }
   
   .header-content {
-    gap: var(--space-3);
+    gap: var(--space-2);
   }
   
   .site-title {
     font-size: var(--font-size-lg);
     gap: var(--space-2);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.98) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.4);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
   }
   
   .theme-toggle-btn {
@@ -332,20 +424,31 @@
     font-size: var(--font-size-base);
   }
   
+  .main-nav ul {
+    flex-wrap: nowrap; /* 小画面でも絶対に1行 */
+    gap: var(--space-1);
+    justify-content: flex-start;
+    padding: 0 var(--space-2);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+  }
+  
+  .main-nav ul::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  
   .nav-text {
-    display: none;
+    display: none; /* アイコンのみ表示 */
   }
   
   .main-nav a {
-    padding: var(--space-3);
-    min-width: 48px;
+    padding: var(--space-2);
+    min-width: 40px;
     justify-content: center;
   }
   
-  .main-nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  .nav-icon {
+    font-size: var(--font-size-lg);
   }
 }
 
@@ -928,66 +1031,6 @@ footer p:last-child {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ===== 📱 Responsive Adjustments ===== */
-@media (max-width: 767px) {
-  .content-section {
-    padding: var(--space-8) 0;
-    margin-bottom: var(--space-12);
-  }
-  
-  .hero-section {
-    padding: var(--space-12) 0;
-    margin-bottom: var(--space-12);
-  }
-  
-  .card {
-    padding: var(--space-6);
-  }
-  
-  .content-highlights {
-    padding: var(--space-6);
-  }
-  
-  .modern-header {
-    padding: var(--space-3) 0;
-  }
-  
-  .header-content {
-    flex-direction: column;
-    gap: var(--space-4);
-    text-align: center;
-  }
-  
-  .private-access-badge {
-    order: -1;
-    align-self: center;
-  }
-  
-  .header-controls {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  
-  .site-title {
-    font-size: var(--font-size-xl);
-    justify-content: center;
-  }
-  
-  .main-nav ul {
-    flex-direction: column;
-    gap: var(--space-2);
-    align-items: center;
-  }
-  
-  .main-nav a {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-    padding: var(--space-4) var(--space-6);
-  }
-}
-
 /* ===== 🎭 Special Interactive Elements ===== */
 
 /* Floating Action Elements */
@@ -1110,4 +1153,29 @@ footer p:last-child {
 .variant-green {
   --local-gradient: linear-gradient(135deg, var(--color-accent-green) 0%, #22c55e 100%);
   --local-shadow: 0 20px 40px -12px rgba(16, 185, 129, 0.35);
+}
+
+/* ダークモード時のタイトル強化 */
+[data-theme="dark"] .site-title {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 0.95) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+[data-theme="dark"] .site-title:hover {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.6));
+}
+
+/* ライトモード時のタイトル確保 */
+[data-theme="light"] .site-title {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.92) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.2);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
 } 
