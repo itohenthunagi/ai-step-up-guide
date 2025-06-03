@@ -14,99 +14,65 @@
     <link rel="stylesheet" href="../style.css">
     
     <style>
-        /* ページ固有のスタイル修正 */
-        .service-card {
+        /* 確実なダークモード対応 */
+        .force-light {
             background: #ffffff !important;
             color: #1f2937 !important;
         }
         
-        .service-card h4,
-        .service-card h5,
-        .service-card h6,
-        .service-card p,
-        .service-card li {
-            color: inherit !important;
+        .force-dark {
+            background: #1f2937 !important;
+            color: #f9fafb !important;
         }
         
-        .service-card ul li {
-            color: #4b5563 !important;
+        /* サービスカード用スタイル */
+        .service-card-light {
+            background: #ffffff !important;
+            color: #1f2937 !important;
         }
         
-        .positioning p {
+        .service-card-dark {
+            background: #374151 !important;
+            color: #f9fafb !important;
+        }
+        
+        /* テキスト色の強制指定 */
+        .text-dark-force {
+            color: #1f2937 !important;
+        }
+        
+        .text-light-force {
+            color: #f9fafb !important;
+        }
+        
+        /* 位置づけセクション */
+        .positioning-light {
+            background: #f0fdf4 !important;
             color: #047857 !important;
         }
         
-        .features li {
-            color: #374151 !important;
+        .positioning-dark {
+            background: #064e3b !important;
+            color: #a7f3d0 !important;
         }
         
-        /* 価格プランの色修正 */
-        .free-plan h6 {
-            color: #374151 !important;
+        /* 選び方ガイド */
+        .selection-guide-light {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
         }
         
-        .free-plan p {
-            color: #6b7280 !important;
+        .selection-guide-dark {
+            background: linear-gradient(135deg, #374151, #4b5563) !important;
         }
         
-        .paid-plan h6 {
-            color: #92400e !important;
+        .selection-card-light {
+            background: white !important;
+            color: #1f2937 !important;
         }
         
-        .paid-plan p {
-            color: #a16207 !important;
-        }
-        
-        /* Perplexity AI用の色調整 */
-        .service-card:nth-child(2) .positioning p {
-            color: #1e40af !important;
-        }
-        
-        .service-card:nth-child(2) .paid-plan h6 {
-            color: #1d4ed8 !important;
-        }
-        
-        .service-card:nth-child(2) .paid-plan p {
-            color: #1e3a8a !important;
-        }
-        
-        /* NotebookLM用の色調整 */
-        .service-card:nth-child(3) .positioning p {
-            color: #dc2626 !important;
-        }
-        
-        .service-card:nth-child(3) .paid-plan h6 {
-            color: #dc2626 !important;
-        }
-        
-        .service-card:nth-child(3) .paid-plan p {
-            color: #b91c1c !important;
-        }
-        
-        /* 選び方ガイドの色修正 */
-        .selection-guide div h4 {
-            font-weight: 600 !important;
-        }
-        
-        .selection-guide div ul {
-            color: #4b5563 !important;
-        }
-        
-        /* ダークモード対応 */
-        @media (prefers-color-scheme: dark) {
-            .service-card {
-                background: #f9fafb !important;
-                color: #1f2937 !important;
-            }
-            
-            .selection-guide {
-                background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
-            }
-            
-            .selection-guide div {
-                background: white !important;
-                color: #1f2937 !important;
-            }
+        .selection-card-dark {
+            background: #6b7280 !important;
+            color: #f9fafb !important;
         }
     </style>
 </head>
@@ -171,38 +137,38 @@
                 <h3 style="font-size: 1.8rem; margin-bottom: 30px; color: #333;">📊 主要サービス比較表</h3>
                 
                 <!-- ChatGPT -->
-                <div class="service-card" style="background: #ffffff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #10a37f;">
+                <div class="service-card service-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #10a37f;">
                     <div class="service-header" style="display: flex; align-items: center; margin-bottom: 20px;">
                         <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #10a37f, #1a7f64); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 20px;">
                             🤖
                         </div>
                         <div>
-                            <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: #10a37f;">ChatGPT（チャッピー）</h4>
-                            <p style="margin: 5px 0 0 0; color: #666; font-size: 1rem;">by OpenAI</p>
+                            <h4 class="text-dark-force" style="font-size: 1.5rem; font-weight: 700; margin: 0; color: #10a37f;">ChatGPT（チャッピー）</h4>
+                            <p class="text-dark-force" style="margin: 5px 0 0 0; color: #666; font-size: 1rem;">by OpenAI</p>
                         </div>
                     </div>
                     
                     <div class="service-details">
-                        <div class="positioning" style="background: #f0fdf4; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                        <div class="positioning positioning-light" style="padding: 15px; border-radius: 8px; margin-bottom: 20px;">
                             <h5 style="color: #15803d; margin: 0 0 8px 0; font-weight: 600;">🎯 位置づけ</h5>
-                            <p style="margin: 0; color: #047857; font-weight: 600;"><strong>万能な執事</strong>（日常から専門的な相談まで対応）</p>
+                            <p style="margin: 0; font-weight: 600;"><strong>万能な執事</strong>（日常から専門的な相談まで対応）</p>
                         </div>
                         
                         <div class="features" style="margin-bottom: 20px;">
-                            <h5 style="color: #1f2937; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
+                            <h5 class="text-dark-force" style="margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🧠 <strong>GPT-4.5（Orion）</strong>で高度な推論と創造性</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📱 <strong>マルチモーダル対応</strong>：テキスト・画像・音声・ファイル解析</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🔍 <strong>Deep Research</strong>：出典付きで調査代行</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">⚙️ <strong>カスタムGPT</strong>でオリジナルAI作成</li>
-                                <li style="padding: 8px 0; color: #374151;">💭 <strong>会話記憶機能</strong>（メモリ）あり</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">🧠 <strong>GPT-4.5（Orion）</strong>で高度な推論と創造性</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">📱 <strong>マルチモーダル対応</strong>：テキスト・画像・音声・ファイル解析</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">🔍 <strong>Deep Research</strong>：出典付きで調査代行</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">⚙️ <strong>カスタムGPT</strong>でオリジナルAI作成</li>
+                                <li class="text-dark-force" style="padding: 8px 0;">💭 <strong>会話記憶機能</strong>（メモリ）あり</li>
                             </ul>
                         </div>
                         
                         <div class="pricing" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div class="free-plan" style="background: #f9fafb; padding: 15px; border-radius: 8px;">
-                                <h6 style="color: #374151; margin: 0 0 8px 0; font-weight: 600;">💚 無料プラン</h6>
-                                <p style="margin: 0; color: #6b7280; font-size: 0.9rem;">GPT-3.5ベース、画像入力・音声制限あり</p>
+                            <div class="free-plan force-light" style="padding: 15px; border-radius: 8px;">
+                                <h6 style="margin: 0 0 8px 0; font-weight: 600;">💚 無料プラン</h6>
+                                <p style="margin: 0; font-size: 0.9rem;">GPT-3.5ベース、画像入力・音声制限あり</p>
                             </div>
                             <div class="paid-plan" style="background: #fef3c7; padding: 15px; border-radius: 8px;">
                                 <h6 style="color: #92400e; margin: 0 0 8px 0; font-weight: 600;">💰 Plus $20/月</h6>
@@ -213,14 +179,14 @@
                 </div>
 
                 <!-- Perplexity AI -->
-                <div class="service-card" style="background: #ffffff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #1e40af;">
+                <div class="service-card service-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #1e40af;">
                     <div class="service-header" style="display: flex; align-items: center; margin-bottom: 20px;">
                         <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #1e40af, #1e3a8a); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 20px;">
                             🔍
                         </div>
                         <div>
-                            <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: #1e40af;">Perplexity AI（パプちゃん）</h4>
-                            <p style="margin: 5px 0 0 0; color: #666; font-size: 1rem;">最新情報に特化したAI</p>
+                            <h4 class="text-dark-force" style="font-size: 1.5rem; font-weight: 700; margin: 0; color: #1e40af;">Perplexity AI（パプちゃん）</h4>
+                            <p class="text-dark-force" style="margin: 5px 0 0 0; color: #666; font-size: 1rem;">最新情報に特化したAI</p>
                         </div>
                     </div>
                     
@@ -231,20 +197,20 @@
                         </div>
                         
                         <div class="features" style="margin-bottom: 20px;">
-                            <h5 style="color: #1f2937; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
+                            <h5 class="text-dark-force" style="margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🌐 <strong>リアルタイムWeb検索</strong>と出典付き回答</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🤖 <strong>GPT-4.1/Claude 4/Gemini Pro</strong>選択可</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📄 <strong>ファイル解析対応</strong>（PDF, CSV, 画像など）</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🧪 <strong>Labs機能</strong>でグラフや表も生成</li>
-                                <li style="padding: 8px 0; color: #374151;">📱 <strong>スマホ連携アシスタント</strong>機能あり</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">🌐 <strong>リアルタイムWeb検索</strong>と出典付き回答</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">🤖 <strong>GPT-4.1/Claude 4/Gemini Pro</strong>選択可</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">📄 <strong>ファイル解析対応</strong>（PDF, CSV, 画像など）</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">🧪 <strong>Labs機能</strong>でグラフや表も生成</li>
+                                <li class="text-dark-force" style="padding: 8px 0;">📱 <strong>スマホ連携アシスタント</strong>機能あり</li>
                             </ul>
                         </div>
                         
                         <div class="pricing" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div class="free-plan" style="background: #f9fafb; padding: 15px; border-radius: 8px;">
-                                <h6 style="color: #374151; margin: 0 0 8px 0; font-weight: 600;">💚 無料プラン</h6>
-                                <p style="margin: 0; color: #6b7280; font-size: 0.9rem;">GPT-3.5相当、1日約20検索、モデル選択制限あり</p>
+                            <div class="free-plan force-light" style="padding: 15px; border-radius: 8px;">
+                                <h6 style="margin: 0 0 8px 0; font-weight: 600;">💚 無料プラン</h6>
+                                <p style="margin: 0; font-size: 0.9rem;">GPT-3.5相当、1日約20検索、モデル選択制限あり</p>
                             </div>
                             <div class="paid-plan" style="background: #dbeafe; padding: 15px; border-radius: 8px;">
                                 <h6 style="color: #1d4ed8; margin: 0 0 8px 0; font-weight: 600;">💰 Pro $20/月</h6>
@@ -255,14 +221,14 @@
                 </div>
 
                 <!-- NotebookLM -->
-                <div class="service-card" style="background: #ffffff; border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #dc2626;">
+                <div class="service-card service-card-light" style="border-radius: 12px; padding: 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); border-left: 5px solid #dc2626;">
                     <div class="service-header" style="display: flex; align-items: center; margin-bottom: 20px;">
                         <div class="service-icon" style="width: 60px; height: 60px; background: linear-gradient(135deg, #dc2626, #b91c1c); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; margin-right: 20px;">
                             📚
                         </div>
                         <div>
-                            <h4 style="font-size: 1.5rem; font-weight: 700; margin: 0; color: #dc2626;">NotebookLM（ノエル）</h4>
-                            <p style="margin: 5px 0 0 0; color: #666; font-size: 1rem;">by Google</p>
+                            <h4 class="text-dark-force" style="font-size: 1.5rem; font-weight: 700; margin: 0; color: #dc2626;">NotebookLM（ノエル）</h4>
+                            <p class="text-dark-force" style="margin: 5px 0 0 0; color: #666; font-size: 1rem;">by Google</p>
                         </div>
                     </div>
                     
@@ -273,20 +239,20 @@
                         </div>
                         
                         <div class="features" style="margin-bottom: 20px;">
-                            <h5 style="color: #1f2937; margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
+                            <h5 class="text-dark-force" style="margin: 0 0 12px 0; font-weight: 600;">✨ 主な特徴</h5>
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📁 <strong>資料50件/50万語まで統合管理</strong></li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🎧 <strong>Audio Overview</strong>で音声要約</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">🔍 <strong>Discover Sources</strong>で外部情報も参照</li>
-                                <li style="padding: 8px 0; border-bottom: 1px solid #eee; color: #374151;">📖 <strong>文書横断検索と引用明示</strong></li>
-                                <li style="padding: 8px 0; color: #374151;">🌐 <strong>多言語・マルチデバイス対応</strong></li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">📁 <strong>資料50件/50万語まで統合管理</strong></li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">🎧 <strong>Audio Overview</strong>で音声要約</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">🔍 <strong>Discover Sources</strong>で外部情報も参照</li>
+                                <li class="text-dark-force" style="padding: 8px 0; border-bottom: 1px solid #eee;">📖 <strong>文書横断検索と引用明示</strong></li>
+                                <li class="text-dark-force" style="padding: 8px 0;">🌐 <strong>多言語・マルチデバイス対応</strong></li>
                             </ul>
                         </div>
                         
                         <div class="pricing" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div class="free-plan" style="background: #f9fafb; padding: 15px; border-radius: 8px;">
-                                <h6 style="color: #374151; margin: 0 0 8px 0; font-weight: 600;">💚 無料プラン</h6>
-                                <p style="margin: 0; color: #6b7280; font-size: 0.9rem;">ベータ版無料（Googleアカウント必要）</p>
+                            <div class="free-plan force-light" style="padding: 15px; border-radius: 8px;">
+                                <h6 style="margin: 0 0 8px 0; font-weight: 600;">💚 無料プラン</h6>
+                                <p style="margin: 0; font-size: 0.9rem;">ベータ版無料（Googleアカウント必要）</p>
                             </div>
                             <div class="paid-plan" style="background: #fee2e2; padding: 15px; border-radius: 8px;">
                                 <h6 style="color: #dc2626; margin: 0 0 8px 0; font-weight: 600;">🔄 Plus版開発中</h6>
@@ -298,31 +264,31 @@
             </div>
 
             <!-- 選び方ガイド -->
-            <div class="selection-guide" style="background: linear-gradient(135deg, #f8fafc, #e2e8f0); padding: 30px; border-radius: 12px; margin-top: 40px;">
+            <div class="selection-guide selection-guide-light" style="padding: 30px; border-radius: 12px; margin-top: 40px;">
                 <h3 style="font-size: 1.8rem; color: #1f2937; margin-bottom: 20px; text-align: center;">🎯 どのサービスを選ぶべき？</h3>
                 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <div class="selection-card selection-card-light" style="padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                         <h4 style="color: #10a37f; margin: 0 0 10px 0; font-weight: 600;">🤖 ChatGPTがおすすめな人</h4>
-                        <ul style="color: #4b5563; margin: 0; padding-left: 20px;">
+                        <ul style="margin: 0; padding-left: 20px;">
                             <li>多様なタスクに対応したい</li>
                             <li>カスタムGPTを作りたい</li>
                             <li>創作活動に活用したい</li>
                         </ul>
                     </div>
                     
-                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <div class="selection-card selection-card-light" style="padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                         <h4 style="color: #1e40af; margin: 0 0 10px 0; font-weight: 600;">🔍 Perplexity AIがおすすめな人</h4>
-                        <ul style="color: #4b5563; margin: 0; padding-left: 20px;">
+                        <ul style="margin: 0; padding-left: 20px;">
                             <li>最新情報の調査が重要</li>
                             <li>出典付きの信頼性が欲しい</li>
                             <li>ビジネス・学術用途</li>
                         </ul>
                     </div>
                     
-                    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                    <div class="selection-card selection-card-light" style="padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
                         <h4 style="color: #dc2626; margin: 0 0 10px 0; font-weight: 600;">📚 NotebookLMがおすすめな人</h4>
-                        <ul style="color: #4b5563; margin: 0; padding-left: 20px;">
+                        <ul style="margin: 0; padding-left: 20px;">
                             <li>個人の資料を整理したい</li>
                             <li>研究・学習用途</li>
                             <li>音声要約を活用したい</li>
@@ -348,7 +314,99 @@
         </div>
     </footer>
 
-    <!-- 🌙 ダークモード切り替え機能 -->
+    <!-- ダークモード対応JavaScript -->
+    <script>
+        // ダークモード検出と動的スタイル適用
+        function applyThemeStyles() {
+            const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            
+            // 全ての要素を取得
+            const serviceCards = document.querySelectorAll('.service-card');
+            const textElements = document.querySelectorAll('.text-dark-force');
+            const positioningElements = document.querySelectorAll('.positioning');
+            const selectionGuide = document.querySelector('.selection-guide');
+            const selectionCards = document.querySelectorAll('.selection-card');
+            const forceLightElements = document.querySelectorAll('.force-light');
+            
+            if (isDarkMode) {
+                console.log('ダークモード検出 - スタイル適用中');
+                
+                // サービスカードをダークテーマに
+                serviceCards.forEach(card => {
+                    card.className = card.className.replace('service-card-light', 'service-card-dark');
+                    card.style.background = '#374151';
+                    card.style.color = '#f9fafb';
+                });
+                
+                // テキスト要素をライトテーマに
+                textElements.forEach(element => {
+                    element.style.color = '#f9fafb';
+                });
+                
+                // 位置づけセクションを調整
+                positioningElements.forEach(element => {
+                    element.style.background = '#064e3b';
+                    element.style.color = '#a7f3d0';
+                    const p = element.querySelector('p');
+                    if (p) p.style.color = '#a7f3d0';
+                });
+                
+                // 選び方ガイドを調整
+                if (selectionGuide) {
+                    selectionGuide.style.background = 'linear-gradient(135deg, #374151, #4b5563)';
+                    const h3 = selectionGuide.querySelector('h3');
+                    if (h3) h3.style.color = '#f9fafb';
+                }
+                
+                // 選択カードを調整
+                selectionCards.forEach(card => {
+                    card.style.background = '#6b7280';
+                    card.style.color = '#f9fafb';
+                    const h4 = card.querySelector('h4');
+                    const ul = card.querySelector('ul');
+                    if (h4) h4.style.color = '#f9fafb';
+                    if (ul) ul.style.color = '#e5e7eb';
+                });
+                
+                // 強制ライト要素を調整
+                forceLightElements.forEach(element => {
+                    element.style.background = '#4b5563';
+                    element.style.color = '#f9fafb';
+                });
+                
+            } else {
+                console.log('ライトモード検出 - デフォルトスタイル適用');
+                
+                // ライトモードの場合はデフォルトスタイルを確実に適用
+                serviceCards.forEach(card => {
+                    card.style.background = '#ffffff';
+                    card.style.color = '#1f2937';
+                });
+                
+                textElements.forEach(element => {
+                    element.style.color = '#1f2937';
+                });
+            }
+        }
+        
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', applyThemeStyles);
+        
+        // システムテーマ変更を監視
+        if (window.matchMedia) {
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(applyThemeStyles);
+        }
+        
+        // 手動テーマ切り替えボタンがある場合の対応
+        const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                setTimeout(applyThemeStyles, 100);
+            });
+        }
+    </script>
+    
+    <!-- 既存のテーマ切り替え機能 -->
     <script src="../src/js/theme-toggle.js"></script>
 </body>
 </html> 
